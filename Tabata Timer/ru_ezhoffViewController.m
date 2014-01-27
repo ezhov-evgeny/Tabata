@@ -8,43 +8,32 @@
 
 #import "ru_ezhoffViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Tabata.h"
 
 @interface ru_ezhoffViewController ()
-
-@property (strong, nonatomic) NSTimer *timer;
-@property (strong, nonatomic) NSDate *startDate;
 
 @end
 
 @implementation ru_ezhoffViewController
 
-typedef enum TabataStates
-{
-    IDLE,
-    STARTING,
-    EXERCISE,
-    RELAXATION
-
-} TabataStates;
-
-const float UPDATE_INTERVAL = 0.01;
-
 bool active = false;
-enum TabataStates tabataState = IDLE;
-float startingDuration = 3.0;
-float exerciseDuration = 3.0;
-float relaxationDuration = 3.0;
-int roundAmount = 4;
-float currentStarting;
-float currentExercise;
-float currentRelaxation;
-int currentRound = 0;
+
+Tabata *tabata;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.timerLabel.text = @"Loaded";
-	// Do any additional setup after loading the view, typically from a nib.
+    tabata = [Tabata getTabata];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                          selector:@selector(tabataStateChanged:)
+                                          name:StateChanged
+                                          object:tabata];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                          selector:@selector(tabataTimerUpdated:)
+                                          name:TimerUpdated
+                                          object:tabata];
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,98 +44,57 @@ int currentRound = 0;
 
 - (IBAction)onActionPressed:(id)sender
 {
-    if (tabataState == IDLE)
+    if ([tabata getState] == IDLE)
     {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
-                                                    target:self
-                                                    selector:@selector(tabataUpdate)
-                                                    userInfo:nil
-                                                    repeats:YES];
+        [tabata start];
     }
     else
     {
-        [self stopTabata];
+        [tabata stop];
     }
 }
 
-- (void)tabataUpdate
+- (void)tabataStateChanged:(NSNotification *)notification
 {
-    switch (tabataState) {
-        case IDLE:
-            tabataState = STARTING;
-            currentRound = 0;
-            currentStarting = startingDuration;
+    switch ([tabata getState]) {
+        case STARTING:
             self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
             break;
-
-        case STARTING:
-            currentStarting -= UPDATE_INTERVAL;
-            [self showTime:currentStarting];
-            if (currentStarting == (int) currentStarting)
-            {
-                AVAudioPlayer *readyPlayer;
-            }
-            if (currentStarting <= 0)
-            {
-                tabataState = EXERCISE;
-                currentExercise = exerciseDuration;
-                [self showRound:++currentRound];
-                self.timerLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-            }
-            break;
-
         case EXERCISE:
-            currentExercise -= UPDATE_INTERVAL;
-            [self showTime:currentExercise];
-            if (currentExercise <= 0)
-            {
-                if (currentRound >= roundAmount)
-                {
-                    [self stopTabata];
-                }
-                else
-                {
-                    tabataState = RELAXATION;
-                    currentRelaxation = relaxationDuration;
-                    self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
-                }
-            }
+            self.timerLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
             break;
-
         case RELAXATION:
-            currentRelaxation -= UPDATE_INTERVAL;
-            [self showTime:currentRelaxation];
-            if (currentRelaxation <= 0)
-            {
-                tabataState = EXERCISE;
-                currentExercise = exerciseDuration;
-                [self showRound:++currentRound];
-                self.timerLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-            }
+            self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
+            break;
+        default:
+            break;
+    }
+    [self tabataTimerUpdated:notification];
+}
+
+- (void)tabataTimerUpdated:(NSNotification *)notification
+{
+    switch ([tabata getState]) {
+        case RELAXATION:
+        case STARTING:
+            [self showTime];
+            [self showRound];
+            break;
+        case EXERCISE:
+            [self showTime];
             break;
         default:
             break;
     }
 }
 
-- (void)stopTabata
+- (void)showTime
 {
-    tabataState = IDLE;
-    [self.timer invalidate];
-    self.timer = nil;
-    currentRound = 0;
-    [self showTime:0];
-    [self showRound:currentRound];
+    self.timerLabel.text = [NSString stringWithFormat:@"%04.02f", [tabata getCurrentTime]];
 }
 
-- (void)showTime:(float)time
+- (void)showRound
 {
-    self.timerLabel.text = [NSString stringWithFormat:@"%2i:%2i:%2i", time  ,time];
-    self.timerLabel.text = [NSString stringWithFormat:@"%04.02f", time];
-}
-
-- (void)showRound:(int)round
-{
-    self.roundLabel.text = [NSString stringWithFormat:@"Round %i/%i", round, roundAmount];
+    self.roundLabel.text = [NSString stringWithFormat:@"Round %i/%i", [tabata getCurrentRound], [tabata getRoundAmount]];
 }
 @end

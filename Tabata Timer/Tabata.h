@@ -1,0 +1,49 @@
+//
+//  ru_ezhoffTabata.h
+//  Tabata Timer
+//
+//  Created by Евгений Ежов on 26.01.14.
+//  Copyright (c) 2014 Евгений Ежов. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Tabata : NSObject
+
+FOUNDATION_EXPORT NSString *const TimerUpdated;
+FOUNDATION_EXPORT NSString *const StateChanged;
+
+typedef enum
+{
+    IDLE,
+    STARTING,
+    EXERCISE,
+    RELAXATION
+
+} TabataStates;
+
++ (Tabata*) getTabata;
+
+// Actions
+- (void)start;
+- (void)stop;
+- (void)pause;
+- (void)reset;
+- (void)update;
+
+// Getters
+- (float)getStartingDuration;
+- (float)getExersiceDuration;
+- (float)getRelaxationDuration;
+- (int)getRoundAmount;
+- (float)getCurrentTime;
+- (int)getCurrentRound;
+- (TabataStates)getState;
+
+// Setters
+- (void)setStartingDuration:(float) duration;
+- (void)setExerciseDuration:(float) duration;
+- (void)setRelaxationDuration:(float) duration;
+- (void)setRoundAmount:(int) amount;
+- (void)setState:(TabataStates)state;
+@end

@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="708" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--Ru ezhoff Settings View Controller-->
         <scene sceneID="0pN-CH-iBo">
             <objects>
-                <viewController id="hqC-2h-2GU" sceneMemberID="viewController">
+                <viewController id="hqC-2h-2GU" customClass="ru_ezhoffSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qhw-IE-u9b"/>
                         <viewControllerLayoutGuide type="bottom" id="7xF-Zo-Wdy"/>
@@ -99,10 +99,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="exersiceTimeField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bqN-cW-Uoc">
+                                <rect key="frame" x="173" y="102" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fzg-pc-VOK"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fzg-pc-VOK">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ux3-cF-77o">
+                            <connections>
+                                <action selector="onSavePressed:" destination="hqC-2h-2GU" id="DMq-OM-68m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="exersiceTimeField" destination="bqN-cW-Uoc" id="9Ra-fv-Ptf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMN-8E-ilR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
