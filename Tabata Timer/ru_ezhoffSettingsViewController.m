@@ -31,7 +31,9 @@ Tabata *tabata;
     [super viewDidLoad];
     tabata = [Tabata getTabata];
     _exersiceTimeField.text = [[NSNumber numberWithFloat:[tabata getExersiceDuration]] stringValue];
-	// Do any additional setup after loading the view.
+    _restTimeField.text = [[NSNumber numberWithFloat:[tabata getRelaxationDuration]] stringValue];
+    _roundField.text = [[NSNumber numberWithFloat:[tabata getRoundAmount]] stringValue];
+    _startingTimeField.text = [[NSNumber numberWithFloat:[tabata getStartingDuration]] stringValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +45,9 @@ Tabata *tabata;
 - (IBAction)onSavePressed:(id)sender
 {
     [tabata setExerciseDuration:[_exersiceTimeField.text floatValue]];
+    [tabata setRelaxationDuration:[_restTimeField.text floatValue]];
+    [tabata setRoundAmount:[_roundField.text intValue]];
+    [tabata setStartingDuration:[_startingTimeField.text floatValue]];
 }
 
 @end

@@ -12,6 +12,12 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *exersiceTimeField;
 
+@property (strong, nonatomic) IBOutlet UITextField *restTimeField;
+
+@property (strong, nonatomic) IBOutlet UITextField *roundField;
+
+@property (strong, nonatomic) IBOutlet UITextField *startingTimeField;
+
 - (IBAction)onSavePressed:(id)sender;
 
 @end

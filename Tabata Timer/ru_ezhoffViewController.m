@@ -16,8 +16,6 @@
 
 @implementation ru_ezhoffViewController
 
-bool active = false;
-
 Tabata *tabata;
 
 - (void)viewDidLoad
@@ -69,6 +67,7 @@ Tabata *tabata;
         default:
             break;
     }
+    [self showRound];
     [self tabataTimerUpdated:notification];
 }
 
@@ -78,7 +77,6 @@ Tabata *tabata;
         case RELAXATION:
         case STARTING:
             [self showTime];
-            [self showRound];
             break;
         case EXERCISE:
             [self showTime];

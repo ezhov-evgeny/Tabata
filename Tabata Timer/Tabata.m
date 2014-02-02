@@ -62,17 +62,17 @@ int currentRound = 0;
 {
     switch (tabataState) {
         case IDLE:
-            [tabata setState:STARTING];
             currentRound = 0;
             currentTime = startingDuration;
+            [tabata setState:STARTING];
             break;
         case STARTING:
             currentTime -= UPDATE_INTERVAL;
             if (currentTime <= 0)
             {
-                [tabata setState:EXERCISE];
                 currentTime = exerciseDuration;
-                currentRound++;
+                ++currentRound;
+                [tabata setState:EXERCISE];
             }
             break;
         case EXERCISE:
@@ -85,8 +85,8 @@ int currentRound = 0;
                 }
                 else
                 {
-                    [tabata setState:RELAXATION];
                     currentTime = relaxationDuration;
+                    [tabata setState:RELAXATION];
                 }
             }
             break;
@@ -94,9 +94,9 @@ int currentRound = 0;
             currentTime -= UPDATE_INTERVAL;
             if (currentTime <= 0)
             {
-                [tabata setState:EXERCISE];
                 currentTime = exerciseDuration;
-                currentRound++;
+                ++currentRound;
+                [tabata setState:EXERCISE];
             }
             break;
         default:
