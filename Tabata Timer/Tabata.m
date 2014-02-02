@@ -7,30 +7,57 @@
 //
 
 #import "Tabata.h"
+#import "SettingsStorage.h"
 
 @implementation Tabata
 
 NSString *const TimerUpdated = @"TabataTimerUpdated";
 NSString *const StateChanged = @"TabataStateChanged";
 
+const int DEFAULT_ROUND_AMOUNT = 8;
+const float DEFAULT_STARTING_DURATION = 3.0;
+const float DEFAULT_EXERCISE_DURATION = 20.0;
+const float DEFAULT_RELAXATION_DURATION = 10.0;
 const float UPDATE_INTERVAL = 0.01;
 
 Tabata *tabata;
+SettingsStorage *storage;
 
 NSTimer *timer;
 TabataStates tabataState = IDLE;
-float startingDuration = 3.0;
-float exerciseDuration = 3.0;
-float relaxationDuration = 3.0;
-int roundAmount = 4;
+float startingDuration;
+float exerciseDuration;
+float relaxationDuration;
+int roundAmount;
 float currentTime;
-int currentRound = 0;
+int currentRound;
 
 + (Tabata*)getTabata
 {
     if (tabata == NULL)
     {
         tabata = [Tabata new];
+        storage = [SettingsStorage new];
+        startingDuration = [storage loadStartingDuration];
+        if (startingDuration == 0) {
+            [storage saveStartingDuration:DEFAULT_STARTING_DURATION];
+            startingDuration = DEFAULT_STARTING_DURATION;
+        }
+        exerciseDuration = [storage loadExerciseDuration];
+        if (exerciseDuration == 0) {
+            [storage saveExerciseDuration:DEFAULT_EXERCISE_DURATION];
+            exerciseDuration =DEFAULT_EXERCISE_DURATION;
+        }
+        relaxationDuration = [storage loadRelaxationDuration];
+        if (relaxationDuration == 0) {
+            [storage saveRelaxationDuration:DEFAULT_RELAXATION_DURATION];
+            relaxationDuration = DEFAULT_RELAXATION_DURATION;
+        }
+        roundAmount = [storage loadRoundAmount];
+        if (roundAmount == 0) {
+            [storage saveRoundAmount:DEFAULT_ROUND_AMOUNT];
+            roundAmount = DEFAULT_ROUND_AMOUNT;
+        }
     }
     return tabata;
 }
