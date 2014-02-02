@@ -179,18 +179,22 @@ int currentRound;
 - (void)setStartingDuration:(float) duration
 {
     startingDuration = duration;
+    [storage saveStartingDuration:duration];
 }
 - (void)setExerciseDuration:(float) duration
 {
     exerciseDuration = duration;
+    [storage saveExerciseDuration:duration];
 }
 - (void)setRelaxationDuration:(float) duration
 {
     relaxationDuration = duration;
+    [storage saveRelaxationDuration:duration];
 }
 - (void)setRoundAmount:(int) amount
 {
     roundAmount = amount;
+    [storage saveRoundAmount:amount];
 }
 
 - (void) setState:(TabataStates)state
