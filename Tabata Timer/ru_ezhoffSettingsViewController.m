@@ -8,6 +8,7 @@
 
 #import "ru_ezhoffSettingsViewController.h"
 #import "Tabata.h"
+#import "SoundEffects.h"
 
 @interface ru_ezhoffSettingsViewController ()
 
@@ -34,6 +35,7 @@ Tabata *tabata;
     _restTimeField.text = [[NSNumber numberWithFloat:[tabata getRelaxationDuration]] stringValue];
     _roundField.text = [[NSNumber numberWithFloat:[tabata getRoundAmount]] stringValue];
     _startingTimeField.text = [[NSNumber numberWithFloat:[tabata getStartingDuration]] stringValue];
+    _silenceModeSwitch.on = [SoundEffects isEnabled];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +50,7 @@ Tabata *tabata;
     [tabata setRelaxationDuration:[_restTimeField.text floatValue]];
     [tabata setRoundAmount:[_roundField.text intValue]];
     [tabata setStartingDuration:[_startingTimeField.text floatValue]];
+    [SoundEffects setEnabled:_silenceModeSwitch.on];
 }
 
 @end

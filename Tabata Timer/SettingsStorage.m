@@ -14,6 +14,7 @@ NSString *const TABATA_STARTING_DURATION = @"TabataStartingDuration";
 NSString *const TABATA_EXERCISE_DURATION = @"TabataExerciseDuration";
 NSString *const TABATA_RELAXATION_DURATION = @"TabataRelaxationDuration";
 NSString *const TABATA_ROUND_AMOUNT = @"TabataRoundAmount";
+NSString *const SOUND_ENABLED = @"SoundEnabled";
 
 
 - (float)loadStartingDuration
@@ -34,6 +35,11 @@ NSString *const TABATA_ROUND_AMOUNT = @"TabataRoundAmount";
 - (int)loadRoundAmount
 {
     return (int) [[NSUserDefaults standardUserDefaults] integerForKey:TABATA_ROUND_AMOUNT];
+}
+
+- (BOOL)loadSoundEnabled
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:SOUND_ENABLED];
 }
 
 - (void)saveStartingDuration:(float)duration
@@ -57,6 +63,12 @@ NSString *const TABATA_ROUND_AMOUNT = @"TabataRoundAmount";
 - (void)saveRoundAmount:(int)amound
 {
     [[NSUserDefaults standardUserDefaults] setInteger:amound forKey:TABATA_ROUND_AMOUNT];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)saveSoundEnabled:(BOOL)enabled
+{
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:SOUND_ENABLED];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

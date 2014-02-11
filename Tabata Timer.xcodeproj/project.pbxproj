@@ -11,6 +11,8 @@
 		078AD09C1895659400A58172 /* ru_ezhoffSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09B1895659400A58172 /* ru_ezhoffSettingsViewController.m */; };
 		078AD09F1895667700A58172 /* Tabata.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09E1895667700A58172 /* Tabata.m */; };
 		07C53E4F189E6A1C005AE43F /* SettingsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C53E4E189E6A1C005AE43F /* SettingsStorage.m */; };
+		07C53E51189E8323005AE43F /* beep_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07C53E50189E8323005AE43F /* beep_01.mp3 */; };
+		07C53E54189E8371005AE43F /* SoundEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C53E53189E8371005AE43F /* SoundEffects.m */; };
 		07C7266A186F8E9D007283D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C72669186F8E9D007283D5 /* Foundation.framework */; };
 		07C7266C186F8E9D007283D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266B186F8E9D007283D5 /* CoreGraphics.framework */; };
 		07C7266E186F8E9D007283D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266D186F8E9D007283D5 /* UIKit.framework */; };
@@ -45,6 +47,9 @@
 		078AD09E1895667700A58172 /* Tabata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tabata.m; sourceTree = "<group>"; };
 		07C53E4D189E6A1C005AE43F /* SettingsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStorage.h; sourceTree = "<group>"; };
 		07C53E4E189E6A1C005AE43F /* SettingsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsStorage.m; sourceTree = "<group>"; };
+		07C53E50189E8323005AE43F /* beep_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_01.mp3; sourceTree = "<group>"; };
+		07C53E52189E8371005AE43F /* SoundEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffects.h; sourceTree = "<group>"; };
+		07C53E53189E8371005AE43F /* SoundEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffects.m; sourceTree = "<group>"; };
 		07C72666186F8E9D007283D5 /* Tabata Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabata Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C72669186F8E9D007283D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07C7266B186F8E9D007283D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +130,7 @@
 		07C7266F186F8E9D007283D5 /* Tabata Timer */ = {
 			isa = PBXGroup;
 			children = (
+				07C53E50189E8323005AE43F /* beep_01.mp3 */,
 				07C72678186F8E9D007283D5 /* ru_ezhoffAppDelegate.h */,
 				07C72679186F8E9D007283D5 /* ru_ezhoffAppDelegate.m */,
 				07C7267B186F8E9E007283D5 /* Main.storyboard */,
@@ -138,6 +144,8 @@
 				078AD09E1895667700A58172 /* Tabata.m */,
 				07C53E4D189E6A1C005AE43F /* SettingsStorage.h */,
 				07C53E4E189E6A1C005AE43F /* SettingsStorage.m */,
+				07C53E52189E8371005AE43F /* SoundEffects.h */,
+				07C53E53189E8371005AE43F /* SoundEffects.m */,
 			);
 			path = "Tabata Timer";
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C72682186F8E9E007283D5 /* Images.xcassets in Resources */,
+				07C53E51189E8323005AE43F /* beep_01.mp3 in Resources */,
 				07C72674186F8E9D007283D5 /* InfoPlist.strings in Resources */,
 				07C7267D186F8E9E007283D5 /* Main.storyboard in Resources */,
 			);
@@ -274,6 +283,7 @@
 				07C72676186F8E9D007283D5 /* main.m in Sources */,
 				07C7267A186F8E9D007283D5 /* ru_ezhoffAppDelegate.m in Sources */,
 				07C72680186F8E9E007283D5 /* ru_ezhoffViewController.m in Sources */,
+				07C53E54189E8371005AE43F /* SoundEffects.m in Sources */,
 				078AD09F1895667700A58172 /* Tabata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

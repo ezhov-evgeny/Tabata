@@ -7,8 +7,8 @@
 //
 
 #import "ru_ezhoffViewController.h"
-#import <AVFoundation/AVFoundation.h>
 #import "Tabata.h"
+#import "SoundEffects.h"
 
 @interface ru_ezhoffViewController ()
 
@@ -31,7 +31,7 @@ Tabata *tabata;
                                           selector:@selector(tabataTimerUpdated:)
                                           name:TimerUpdated
                                           object:tabata];
-    // Do any additional setup after loading the view, typically from a nib.
+    [SoundEffects registerSoundEffects];
 }
 
 - (void)didReceiveMemoryWarning

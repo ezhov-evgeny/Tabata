@@ -13,6 +13,7 @@
 
 NSString *const TimerUpdated = @"TabataTimerUpdated";
 NSString *const StateChanged = @"TabataStateChanged";
+NSString *const PrepareSignal = @"TabataPrepareSignal";
 
 const int DEFAULT_ROUND_AMOUNT = 8;
 const float DEFAULT_STARTING_DURATION = 3.0;
@@ -95,6 +96,10 @@ int currentRound;
             break;
         case STARTING:
             currentTime -= UPDATE_INTERVAL;
+            if ((currentTime > 0.9 && currentTime < 1.1) || (currentTime > 1.9 && currentTime < 2.1))
+            {
+                [[NSNotificationCenter defaultCenter] postNotificationName:PrepareSignal object:self];
+            }
             if (currentTime <= 0)
             {
                 currentTime = exerciseDuration;

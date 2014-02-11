@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *startingTimeField;
 
+@property (strong, nonatomic) IBOutlet UISwitch *silenceModeSwitch;
+
 - (IBAction)onSavePressed:(id)sender;
 
 @end

@@ -12,6 +12,7 @@
 
 FOUNDATION_EXPORT NSString *const TimerUpdated;
 FOUNDATION_EXPORT NSString *const StateChanged;
+FOUNDATION_EXPORT NSString *const PrepareSignal;
 
 typedef enum
 {
