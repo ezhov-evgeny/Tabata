@@ -10,41 +10,55 @@
 
 @interface Tabata : NSObject
 
-FOUNDATION_EXPORT NSString *const TimerUpdated;
+        FOUNDATION_EXPORT NSString *const TimerUpdated;
 FOUNDATION_EXPORT NSString *const StateChanged;
 FOUNDATION_EXPORT NSString *const PrepareSignal;
 
-typedef enum
-{
+typedef enum {
     IDLE,
     STARTING,
+    PAUSED,
     EXERCISE,
     RELAXATION
 
 } TabataStates;
 
-+ (Tabata*) getTabata;
++ (Tabata *)getTabata;
 
 // Actions
 - (void)start;
+
 - (void)stop;
+
 - (void)pause;
+
 - (void)reset;
+
 - (void)update;
 
 // Getters
 - (float)getStartingDuration;
+
 - (float)getExersiceDuration;
+
 - (float)getRelaxationDuration;
+
 - (int)getRoundAmount;
+
 - (float)getCurrentTime;
+
 - (int)getCurrentRound;
+
 - (TabataStates)getState;
 
 // Setters
-- (void)setStartingDuration:(float) duration;
-- (void)setExerciseDuration:(float) duration;
-- (void)setRelaxationDuration:(float) duration;
-- (void)setRoundAmount:(int) amount;
+- (void)setStartingDuration:(float)duration;
+
+- (void)setExerciseDuration:(float)duration;
+
+- (void)setRelaxationDuration:(float)duration;
+
+- (void)setRoundAmount:(int)amount;
+
 - (void)setState:(TabataStates)state;
 @end

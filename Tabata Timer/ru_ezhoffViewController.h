@@ -10,10 +10,20 @@
 
 @interface ru_ezhoffViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+@property(strong, nonatomic) IBOutlet UILabel *timerLabel;
 
-@property (strong, nonatomic) IBOutlet UILabel *roundLabel;
+@property(strong, nonatomic) IBOutlet UILabel *roundLabel;
 
-- (IBAction)onActionPressed:(id)sender;
+@property(strong, nonatomic) IBOutlet UIButton *startButton;
+
+@property(strong, nonatomic) IBOutlet UIButton *stopButton;
+
+@property(strong, nonatomic) IBOutlet UIButton *pauseButton;
+
+- (IBAction)onStartPressed:(id)sender;
+
+- (IBAction)onStopPressed:(id)sender;
+
+- (IBAction)onPausePressed:(id)sender;
 
 @end

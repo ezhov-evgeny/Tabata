@@ -8,7 +8,9 @@
 
 #import "ru_ezhoffViewController.h"
 #import "Tabata.h"
+#import "Theme.h"
 #import "SoundEffects.h"
+#import "ThemeStub.h"
 
 @interface ru_ezhoffViewController ()
 
@@ -17,43 +19,55 @@
 @implementation ru_ezhoffViewController
 
 Tabata *tabata;
+NSObject <Theme> *theme;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.timerLabel.text = @"Loaded";
+    self.pauseButton.hidden = true;
+    self.stopButton.hidden = true;
     tabata = [Tabata getTabata];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                          selector:@selector(tabataStateChanged:)
-                                          name:StateChanged
-                                          object:tabata];
+                                             selector:@selector(tabataStateChanged:)
+                                                 name:StateChanged
+                                               object:tabata];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                          selector:@selector(tabataTimerUpdated:)
-                                          name:TimerUpdated
-                                          object:tabata];
+                                             selector:@selector(tabataTimerUpdated:)
+                                                 name:TimerUpdated
+                                               object:tabata];
     [SoundEffects registerSoundEffects];
+
+    theme = [ThemeStub new];
+
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onActionPressed:(id)sender
-{
-    if ([tabata getState] == IDLE)
-    {
-        [tabata start];
-    }
-    else
-    {
-        [tabata stop];
-    }
+- (IBAction)onStartPressed:(id)sender {
+    self.startButton.hidden = true;
+    self.pauseButton.hidden = false;
+    self.stopButton.hidden = false;
+    [tabata start];
 }
 
-- (void)tabataStateChanged:(NSNotification *)notification
-{
+- (IBAction)onStopPressed:(id)sender {
+    self.startButton.hidden = false;
+    self.pauseButton.hidden = true;
+    self.stopButton.hidden = true;
+    [tabata stop];
+}
+
+- (IBAction)onPausePressed:(id)sender {
+    self.startButton.hidden = false;
+    self.pauseButton.hidden = true;
+    self.stopButton.hidden = false;
+    [tabata pause];
+}
+
+- (void)tabataStateChanged:(NSNotification *)notification {
     switch ([tabata getState]) {
         case STARTING:
             self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
@@ -65,34 +79,22 @@ Tabata *tabata;
             self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
             break;
         default:
+            self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
             break;
     }
     [self showRound];
     [self tabataTimerUpdated:notification];
 }
 
-- (void)tabataTimerUpdated:(NSNotification *)notification
-{
-    switch ([tabata getState]) {
-        case RELAXATION:
-        case STARTING:
-            [self showTime];
-            break;
-        case EXERCISE:
-            [self showTime];
-            break;
-        default:
-            break;
-    }
+- (void)tabataTimerUpdated:(NSNotification *)notification {
+    [self showTime];
 }
 
-- (void)showTime
-{
+- (void)showTime {
     self.timerLabel.text = [NSString stringWithFormat:@"%04.02f", [tabata getCurrentTime]];
 }
 
-- (void)showRound
-{
+- (void)showRound {
     self.roundLabel.text = [NSString stringWithFormat:@"Round %i/%i", [tabata getCurrentRound], [tabata getRoundAmount]];
 }
 @end
