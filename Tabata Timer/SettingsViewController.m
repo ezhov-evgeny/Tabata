@@ -86,7 +86,7 @@ NSInteger tempRoundAmount;
     if (component == ROUND_COMPONENT) {
         return [@(row + 1) stringValue];
     }
-    return [NSString stringWithFormat:@"%li sec", (long) (row + 1)];
+    return [NSString stringWithFormat:NSLocalizedString(@"seconds.format", @"Seconds format"), (long) (row + 1)];
 }
 
 

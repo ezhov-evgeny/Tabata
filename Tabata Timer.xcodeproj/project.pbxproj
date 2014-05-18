@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0768035918730C0B00DDDA7C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768035818730C0B00DDDA7C /* AVFoundation.framework */; };
+		078918DF192914510012DE7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 078918E1192914510012DE7E /* Localizable.strings */; };
 		078AD09C1895659400A58172 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09B1895659400A58172 /* SettingsViewController.m */; };
 		078AD09F1895667700A58172 /* Tabata.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09E1895667700A58172 /* Tabata.m */; };
 		07C53E4F189E6A1C005AE43F /* SettingsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C53E4E189E6A1C005AE43F /* SettingsStorage.m */; };
@@ -16,7 +17,6 @@
 		07C7266A186F8E9D007283D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C72669186F8E9D007283D5 /* Foundation.framework */; };
 		07C7266C186F8E9D007283D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266B186F8E9D007283D5 /* CoreGraphics.framework */; };
 		07C7266E186F8E9D007283D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266D186F8E9D007283D5 /* UIKit.framework */; };
-		07C72674186F8E9D007283D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07C72672186F8E9D007283D5 /* InfoPlist.strings */; };
 		07C72676186F8E9D007283D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72675186F8E9D007283D5 /* main.m */; };
 		07C7267A186F8E9D007283D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72679186F8E9D007283D5 /* AppDelegate.m */; };
 		07C7267D186F8E9E007283D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C7267B186F8E9E007283D5 /* Main.storyboard */; };
@@ -25,10 +25,11 @@
 		07C72689186F8E9E007283D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C72688186F8E9E007283D5 /* XCTest.framework */; };
 		07C7268A186F8E9E007283D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C72669186F8E9D007283D5 /* Foundation.framework */; };
 		07C7268B186F8E9E007283D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266D186F8E9D007283D5 /* UIKit.framework */; };
-		07C72693186F8E9E007283D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07C72691186F8E9E007283D5 /* InfoPlist.strings */; };
 		07C72695186F8E9E007283D5 /* Tabata_TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72694186F8E9E007283D5 /* Tabata_TimerTests.m */; };
 		8AA43394A03A984392B6B232 /* ThemeNative7.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA43C79624349465BE1C59B /* ThemeNative7.m */; };
 		8AA436B9EA16B9BD6922F2C0 /* ThemeNative7.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA43C79624349465BE1C59B /* ThemeNative7.m */; };
+		8AA438A77085EBCCB78E02DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AA43D9E97C330C0C6ECA798 /* InfoPlist.strings */; };
+		8AA439766884597B514F507E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AA43D9E97C330C0C6ECA798 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		073B1BE118B11983001A1953 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		073B1BE218B12183001A1953 /* ThemeNative7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNative7.h; sourceTree = "<group>"; };
 		0768035818730C0B00DDDA7C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		078918E21929145A0012DE7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		078918E31929145C0012DE7E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		078AD09A1895659400A58172 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		078AD09B1895659400A58172 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		078AD09D1895667700A58172 /* Tabata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tabata.h; sourceTree = "<group>"; };
@@ -59,20 +62,21 @@
 		07C7266B186F8E9D007283D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		07C7266D186F8E9D007283D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07C72671186F8E9D007283D5 /* Tabata Timer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tabata Timer-Info.plist"; sourceTree = "<group>"; };
-		07C72673186F8E9D007283D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07C72675186F8E9D007283D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07C72677186F8E9D007283D5 /* Tabata Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tabata Timer-Prefix.pch"; sourceTree = "<group>"; };
 		07C72678186F8E9D007283D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07C72679186F8E9D007283D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		07C7267C186F8E9E007283D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07C7267E186F8E9E007283D5 /* TabataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabataViewController.h; sourceTree = "<group>"; };
 		07C7267F186F8E9E007283D5 /* TabataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabataViewController.m; sourceTree = "<group>"; };
 		07C72681186F8E9E007283D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07C72687186F8E9E007283D5 /* Tabata TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tabata TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C72688186F8E9E007283D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		07C72690186F8E9E007283D5 /* Tabata TimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tabata TimerTests-Info.plist"; sourceTree = "<group>"; };
-		07C72692186F8E9E007283D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07C72694186F8E9E007283D5 /* Tabata_TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tabata_TimerTests.m; sourceTree = "<group>"; };
+		07C9AEE91928B4220029FC74 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		07C9AEEA1928B4220029FC74 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8AA4337054026B6D4E6C176E /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8AA43AD54A35030C5768AA29 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8AA43C79624349465BE1C59B /* ThemeNative7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeNative7.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,7 @@
 				073B1BE118B11983001A1953 /* Theme.h */,
 				073B1BE218B12183001A1953 /* ThemeNative7.h */,
 				8AA43C79624349465BE1C59B /* ThemeNative7.m */,
+				8AA43D9E97C330C0C6ECA798 /* InfoPlist.strings */,
 			);
 			path = "Tabata Timer";
 			sourceTree = "<group>";
@@ -162,9 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				07C72671186F8E9D007283D5 /* Tabata Timer-Info.plist */,
-				07C72672186F8E9D007283D5 /* InfoPlist.strings */,
 				07C72675186F8E9D007283D5 /* main.m */,
 				07C72677186F8E9D007283D5 /* Tabata Timer-Prefix.pch */,
+				078918E1192914510012DE7E /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				07C72690186F8E9E007283D5 /* Tabata TimerTests-Info.plist */,
-				07C72691186F8E9E007283D5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -247,6 +251,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 07C7265D186F8E9D007283D5;
 			productRefGroup = 07C72667186F8E9D007283D5 /* Products */;
@@ -265,9 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C72682186F8E9E007283D5 /* Images.xcassets in Resources */,
+				078918DF192914510012DE7E /* Localizable.strings in Resources */,
 				07C53E51189E8323005AE43F /* beep_01.mp3 in Resources */,
-				07C72674186F8E9D007283D5 /* InfoPlist.strings in Resources */,
 				07C7267D186F8E9E007283D5 /* Main.storyboard in Resources */,
+				8AA439766884597B514F507E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C72693186F8E9E007283D5 /* InfoPlist.strings in Resources */,
+				8AA438A77085EBCCB78E02DD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,26 +323,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		07C72672186F8E9D007283D5 /* InfoPlist.strings */ = {
+		078918E1192914510012DE7E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				07C72673186F8E9D007283D5 /* en */,
+				078918E21929145A0012DE7E /* en */,
+				078918E31929145C0012DE7E /* ru */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		07C7267B186F8E9E007283D5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				07C7267C186F8E9E007283D5 /* Base */,
+				07C9AEE91928B4220029FC74 /* en */,
+				07C9AEEA1928B4220029FC74 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		07C72691186F8E9E007283D5 /* InfoPlist.strings */ = {
+		8AA43D9E97C330C0C6ECA798 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				07C72692186F8E9E007283D5 /* en */,
+				8AA43AD54A35030C5768AA29 /* en */,
+				8AA4337054026B6D4E6C176E /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

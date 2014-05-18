@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Tabata Timer
+
+  Created by Евгений Ежов on 18.05.14.
+  Copyright (c) 2014 Евгений Ежов. All rights reserved.
+*/
+
+"timer.format" = "%04.02f";
+"round.format" = "Круг %i / %i";
+"seconds.format" = "%li сек";

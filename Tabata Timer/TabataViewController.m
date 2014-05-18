@@ -98,10 +98,10 @@ NSObject <Theme> *theme;
 }
 
 - (void)showTime {
-    self.timerLabel.text = [NSString stringWithFormat:@"%04.02f", [tabata getCurrentTime]];
+    self.timerLabel.text = [NSString stringWithFormat:NSLocalizedString(@"timer.format", @"Timer format"), [tabata getCurrentTime]];
 }
 
 - (void)showRound {
-    self.roundLabel.text = [NSString stringWithFormat:@"Round %i / %i", [tabata getCurrentRound], [tabata getRoundAmount]];
+    self.roundLabel.text = [NSString stringWithFormat:NSLocalizedString(@"round.format", @"Round format"), [tabata getCurrentRound], [tabata getRoundAmount]];
 }
 @end
