@@ -1,5 +1,5 @@
 //
-//  ru_ezhoffTabata.h
+//  Tabata.h
 //  Tabata Timer
 //
 //  Created by Евгений Ежов on 26.01.14.
@@ -10,18 +10,16 @@
 
 @interface Tabata : NSObject
 
-        FOUNDATION_EXPORT NSString *const TimerUpdated;
-FOUNDATION_EXPORT NSString *const StateChanged;
-FOUNDATION_EXPORT NSString *const PrepareSignal;
-
 typedef enum {
     IDLE,
     STARTING,
-    PAUSED,
     EXERCISE,
     RELAXATION
-
 } TabataStates;
+
+FOUNDATION_EXPORT NSString *const TimerUpdated;
+FOUNDATION_EXPORT NSString *const StateChanged;
+FOUNDATION_EXPORT NSString *const PrepareSignal;
 
 + (Tabata *)getTabata;
 
