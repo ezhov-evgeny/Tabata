@@ -11,24 +11,21 @@
 
 @protocol Theme <NSObject>
 
-- (UIColor *)getBackgroundColor:(TabataStates)state;
+typedef enum {
+    THEME_TIMER_INACTIVE,
+    THEME_TIMER_EXERCISE,
+    THEME_TIMER_RELAXATION,
+    THEME_START,
+    THEME_STOP,
+    THEME_PAUSE,
+    THEME_ROUND,
+    THEME_NAVIGATION_BUTTONS
+} ThemePropertyType;
 
-- (UIFont *)getTimerFont:(TabataStates)state;
+- (UIColor *)getColorFor:(ThemePropertyType)property;
 
-- (int)getTimerSize:(TabataStates)state;
+- (UIFont *)getFontFor:(ThemePropertyType)property;
 
-- (UIColor *)getTimerColor:(TabataStates)state;
-
-- (UIFont *)getRoundFont:(TabataStates)state;
-
-- (int)getRoundSize:(TabataStates)state;
-
-- (UIColor *)getRoundColor:(TabataStates)state;
-
-- (UIFont *)getButtonFont:(TabataStates)state;
-
-- (int)getButtonSize:(TabataStates)state;
-
-- (UIColor *)getButtonColor:(TabataStates)state;
+- (CGFloat)getFontSizeFor:(ThemePropertyType)property;
 
 @end

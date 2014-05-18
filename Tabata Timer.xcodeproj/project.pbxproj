@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		073B1BDF18B116C0001A1953 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 073B1BDD18B116C0001A1953 /* DS-DIGI.TTF */; };
-		073B1BE018B116C0001A1953 /* DS-DIGII.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 073B1BDE18B116C0001A1953 /* DS-DIGII.TTF */; };
-		073B1BE418B12183001A1953 /* ThemeStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 073B1BE318B12183001A1953 /* ThemeStub.m */; };
 		0768035918730C0B00DDDA7C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768035818730C0B00DDDA7C /* AVFoundation.framework */; };
-		078AD09C1895659400A58172 /* ru_ezhoffSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09B1895659400A58172 /* ru_ezhoffSettingsViewController.m */; };
+		078AD09C1895659400A58172 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09B1895659400A58172 /* SettingsViewController.m */; };
 		078AD09F1895667700A58172 /* Tabata.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AD09E1895667700A58172 /* Tabata.m */; };
 		07C53E4F189E6A1C005AE43F /* SettingsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C53E4E189E6A1C005AE43F /* SettingsStorage.m */; };
 		07C53E51189E8323005AE43F /* beep_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07C53E50189E8323005AE43F /* beep_01.mp3 */; };
@@ -21,15 +18,17 @@
 		07C7266E186F8E9D007283D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266D186F8E9D007283D5 /* UIKit.framework */; };
 		07C72674186F8E9D007283D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07C72672186F8E9D007283D5 /* InfoPlist.strings */; };
 		07C72676186F8E9D007283D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72675186F8E9D007283D5 /* main.m */; };
-		07C7267A186F8E9D007283D5 /* ru_ezhoffAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72679186F8E9D007283D5 /* ru_ezhoffAppDelegate.m */; };
+		07C7267A186F8E9D007283D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72679186F8E9D007283D5 /* AppDelegate.m */; };
 		07C7267D186F8E9E007283D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C7267B186F8E9E007283D5 /* Main.storyboard */; };
-		07C72680186F8E9E007283D5 /* ru_ezhoffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7267F186F8E9E007283D5 /* ru_ezhoffViewController.m */; };
+		07C72680186F8E9E007283D5 /* TabataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7267F186F8E9E007283D5 /* TabataViewController.m */; };
 		07C72682186F8E9E007283D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C72681186F8E9E007283D5 /* Images.xcassets */; };
 		07C72689186F8E9E007283D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C72688186F8E9E007283D5 /* XCTest.framework */; };
 		07C7268A186F8E9E007283D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C72669186F8E9D007283D5 /* Foundation.framework */; };
 		07C7268B186F8E9E007283D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7266D186F8E9D007283D5 /* UIKit.framework */; };
 		07C72693186F8E9E007283D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07C72691186F8E9E007283D5 /* InfoPlist.strings */; };
 		07C72695186F8E9E007283D5 /* Tabata_TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C72694186F8E9E007283D5 /* Tabata_TimerTests.m */; };
+		8AA43394A03A984392B6B232 /* ThemeNative7.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA43C79624349465BE1C59B /* ThemeNative7.m */; };
+		8AA436B9EA16B9BD6922F2C0 /* ThemeNative7.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA43C79624349465BE1C59B /* ThemeNative7.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,14 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		073B1BDD18B116C0001A1953 /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.TTF"; sourceTree = "<group>"; };
-		073B1BDE18B116C0001A1953 /* DS-DIGII.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGII.TTF"; sourceTree = "<group>"; };
 		073B1BE118B11983001A1953 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
-		073B1BE218B12183001A1953 /* ThemeStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeStub.h; sourceTree = "<group>"; };
-		073B1BE318B12183001A1953 /* ThemeStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeStub.m; sourceTree = "<group>"; };
+		073B1BE218B12183001A1953 /* ThemeNative7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNative7.h; sourceTree = "<group>"; };
 		0768035818730C0B00DDDA7C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		078AD09A1895659400A58172 /* ru_ezhoffSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ru_ezhoffSettingsViewController.h; sourceTree = "<group>"; };
-		078AD09B1895659400A58172 /* ru_ezhoffSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ru_ezhoffSettingsViewController.m; sourceTree = "<group>"; };
+		078AD09A1895659400A58172 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		078AD09B1895659400A58172 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		078AD09D1895667700A58172 /* Tabata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tabata.h; sourceTree = "<group>"; };
 		078AD09E1895667700A58172 /* Tabata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tabata.m; sourceTree = "<group>"; };
 		07C53E4D189E6A1C005AE43F /* SettingsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStorage.h; sourceTree = "<group>"; };
@@ -66,17 +62,18 @@
 		07C72673186F8E9D007283D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07C72675186F8E9D007283D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07C72677186F8E9D007283D5 /* Tabata Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tabata Timer-Prefix.pch"; sourceTree = "<group>"; };
-		07C72678186F8E9D007283D5 /* ru_ezhoffAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ru_ezhoffAppDelegate.h; sourceTree = "<group>"; };
-		07C72679186F8E9D007283D5 /* ru_ezhoffAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ru_ezhoffAppDelegate.m; sourceTree = "<group>"; };
+		07C72678186F8E9D007283D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		07C72679186F8E9D007283D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		07C7267C186F8E9E007283D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07C7267E186F8E9E007283D5 /* ru_ezhoffViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ru_ezhoffViewController.h; sourceTree = "<group>"; };
-		07C7267F186F8E9E007283D5 /* ru_ezhoffViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ru_ezhoffViewController.m; sourceTree = "<group>"; };
+		07C7267E186F8E9E007283D5 /* TabataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabataViewController.h; sourceTree = "<group>"; };
+		07C7267F186F8E9E007283D5 /* TabataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabataViewController.m; sourceTree = "<group>"; };
 		07C72681186F8E9E007283D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07C72687186F8E9E007283D5 /* Tabata TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tabata TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C72688186F8E9E007283D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		07C72690186F8E9E007283D5 /* Tabata TimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tabata TimerTests-Info.plist"; sourceTree = "<group>"; };
 		07C72692186F8E9E007283D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07C72694186F8E9E007283D5 /* Tabata_TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tabata_TimerTests.m; sourceTree = "<group>"; };
+		8AA43C79624349465BE1C59B /* ThemeNative7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeNative7.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,18 +135,16 @@
 		07C7266F186F8E9D007283D5 /* Tabata Timer */ = {
 			isa = PBXGroup;
 			children = (
-				073B1BDD18B116C0001A1953 /* DS-DIGI.TTF */,
-				073B1BDE18B116C0001A1953 /* DS-DIGII.TTF */,
 				07C53E50189E8323005AE43F /* beep_01.mp3 */,
-				07C72678186F8E9D007283D5 /* ru_ezhoffAppDelegate.h */,
-				07C72679186F8E9D007283D5 /* ru_ezhoffAppDelegate.m */,
+				07C72678186F8E9D007283D5 /* AppDelegate.h */,
+				07C72679186F8E9D007283D5 /* AppDelegate.m */,
 				07C7267B186F8E9E007283D5 /* Main.storyboard */,
-				07C7267E186F8E9E007283D5 /* ru_ezhoffViewController.h */,
-				07C7267F186F8E9E007283D5 /* ru_ezhoffViewController.m */,
+				07C7267E186F8E9E007283D5 /* TabataViewController.h */,
+				07C7267F186F8E9E007283D5 /* TabataViewController.m */,
 				07C72681186F8E9E007283D5 /* Images.xcassets */,
 				07C72670186F8E9D007283D5 /* Supporting Files */,
-				078AD09A1895659400A58172 /* ru_ezhoffSettingsViewController.h */,
-				078AD09B1895659400A58172 /* ru_ezhoffSettingsViewController.m */,
+				078AD09A1895659400A58172 /* SettingsViewController.h */,
+				078AD09B1895659400A58172 /* SettingsViewController.m */,
 				078AD09D1895667700A58172 /* Tabata.h */,
 				078AD09E1895667700A58172 /* Tabata.m */,
 				07C53E4D189E6A1C005AE43F /* SettingsStorage.h */,
@@ -157,8 +152,8 @@
 				07C53E52189E8371005AE43F /* SoundEffects.h */,
 				07C53E53189E8371005AE43F /* SoundEffects.m */,
 				073B1BE118B11983001A1953 /* Theme.h */,
-				073B1BE218B12183001A1953 /* ThemeStub.h */,
-				073B1BE318B12183001A1953 /* ThemeStub.m */,
+				073B1BE218B12183001A1953 /* ThemeNative7.h */,
+				8AA43C79624349465BE1C59B /* ThemeNative7.m */,
 			);
 			path = "Tabata Timer";
 			sourceTree = "<group>";
@@ -273,8 +268,6 @@
 				07C53E51189E8323005AE43F /* beep_01.mp3 in Resources */,
 				07C72674186F8E9D007283D5 /* InfoPlist.strings in Resources */,
 				07C7267D186F8E9E007283D5 /* Main.storyboard in Resources */,
-				073B1BE018B116C0001A1953 /* DS-DIGII.TTF in Resources */,
-				073B1BDF18B116C0001A1953 /* DS-DIGI.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C53E4F189E6A1C005AE43F /* SettingsStorage.m in Sources */,
-				078AD09C1895659400A58172 /* ru_ezhoffSettingsViewController.m in Sources */,
+				078AD09C1895659400A58172 /* SettingsViewController.m in Sources */,
 				07C72676186F8E9D007283D5 /* main.m in Sources */,
-				07C7267A186F8E9D007283D5 /* ru_ezhoffAppDelegate.m in Sources */,
-				07C72680186F8E9E007283D5 /* ru_ezhoffViewController.m in Sources */,
+				07C7267A186F8E9D007283D5 /* AppDelegate.m in Sources */,
+				07C72680186F8E9E007283D5 /* TabataViewController.m in Sources */,
 				07C53E54189E8371005AE43F /* SoundEffects.m in Sources */,
 				078AD09F1895667700A58172 /* Tabata.m in Sources */,
-				073B1BE418B12183001A1953 /* ThemeStub.m in Sources */,
+				8AA43394A03A984392B6B232 /* ThemeNative7.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C72695186F8E9E007283D5 /* Tabata_TimerTests.m in Sources */,
+				8AA436B9EA16B9BD6922F2C0 /* ThemeNative7.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

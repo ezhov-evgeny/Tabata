@@ -1,5 +1,5 @@
 //
-//  ru_ezhoffAppDelegate.h
+//  AppDelegate.h
 //  Tabata Timer
 //
 //  Created by Евгений Ежов on 29.12.13.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ru_ezhoffAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic) UIWindow *window;
 
 @end

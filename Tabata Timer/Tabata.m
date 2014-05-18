@@ -33,10 +33,8 @@ int roundAmount;
 float currentTime;
 int currentRound;
 
-+ (Tabata*)getTabata
-{
-    if (tabata == NULL)
-    {
++ (Tabata *)getTabata {
+    if (tabata == NULL) {
         tabata = [Tabata new];
         storage = [SettingsStorage new];
         startingDuration = [storage loadStartingDuration];
@@ -47,7 +45,7 @@ int currentRound;
         exerciseDuration = [storage loadExerciseDuration];
         if (exerciseDuration == 0) {
             [storage saveExerciseDuration:DEFAULT_EXERCISE_DURATION];
-            exerciseDuration =DEFAULT_EXERCISE_DURATION;
+            exerciseDuration = DEFAULT_EXERCISE_DURATION;
         }
         relaxationDuration = [storage loadRelaxationDuration];
         if (relaxationDuration == 0) {
@@ -64,30 +62,26 @@ int currentRound;
 }
 
 // Actions
-- (void)start
-{
+- (void)start {
     timer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
-                                                target:self
-                                                selector:@selector(update)
-                                                userInfo:nil
-                                                repeats:YES];
+                                             target:self
+                                           selector:@selector(update)
+                                           userInfo:nil
+                                            repeats:YES];
 }
 
-- (void)stop
-{
+- (void)stop {
     [timer invalidate];
     timer = nil;
     [self reset];
     [[NSNotificationCenter defaultCenter] postNotificationName:StateChanged object:self];
 }
 
-- (void)pause
-{
+- (void)pause {
 
 }
 
-- (void)update
-{
+- (void)update {
     switch (tabataState) {
         case IDLE:
             currentRound = 0;
@@ -96,12 +90,10 @@ int currentRound;
             break;
         case STARTING:
             currentTime -= UPDATE_INTERVAL;
-            if ((currentTime > 0.9 && currentTime < 1.1) || (currentTime > 1.9 && currentTime < 2.1))
-            {
+            if ((currentTime > 0.9 && currentTime < 1.1) || (currentTime > 1.9 && currentTime < 2.1)) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:PrepareSignal object:self];
             }
-            if (currentTime <= 0)
-            {
+            if (currentTime <= 0) {
                 currentTime = exerciseDuration;
                 ++currentRound;
                 [tabata setState:EXERCISE];
@@ -109,14 +101,11 @@ int currentRound;
             break;
         case EXERCISE:
             currentTime -= UPDATE_INTERVAL;
-            if (currentTime <= 0)
-            {
-                if (currentRound >= roundAmount)
-                {
+            if (currentTime <= 0) {
+                if (currentRound >= roundAmount) {
                     [self stop];
                 }
-                else
-                {
+                else {
                     currentTime = relaxationDuration;
                     [tabata setState:RELAXATION];
                 }
@@ -124,8 +113,7 @@ int currentRound;
             break;
         case RELAXATION:
             currentTime -= UPDATE_INTERVAL;
-            if (currentTime <= 0)
-            {
+            if (currentTime <= 0) {
                 currentTime = exerciseDuration;
                 ++currentRound;
                 [tabata setState:EXERCISE];
@@ -137,73 +125,52 @@ int currentRound;
     [[NSNotificationCenter defaultCenter] postNotificationName:TimerUpdated object:self];
 }
 
-- (void)reset
-{
+- (void)reset {
     [tabata setState:IDLE];
     currentTime = 0;
     currentRound = 0;
 }
 
-// Getters
-- (float)getStartingDuration
-{
-    return startingDuration;
-}
-
-- (float)getExersiceDuration
-{
+- (float)getExerciseDuration {
     return exerciseDuration;
 }
 
-- (float)getRelaxationDuration
-{
+- (float)getRelaxationDuration {
     return relaxationDuration;
 }
 
-- (int)getRoundAmount;
-{
+- (int)getRoundAmount; {
     return roundAmount;
 }
 
-- (float)getCurrentTime;
-{
+- (float)getCurrentTime; {
     return currentTime;
 }
 
-- (int)getCurrentRound
-{
+- (int)getCurrentRound {
     return currentRound;
 }
 
-- (TabataStates)getState
-{
+- (TabataStates)getState {
     return tabataState;
 }
 
-// Setters
-- (void)setStartingDuration:(float) duration
-{
-    startingDuration = duration;
-    [storage saveStartingDuration:duration];
-}
-- (void)setExerciseDuration:(float) duration
-{
+- (void)setExerciseDuration:(float)duration {
     exerciseDuration = duration;
     [storage saveExerciseDuration:duration];
 }
-- (void)setRelaxationDuration:(float) duration
-{
+
+- (void)setRelaxationDuration:(float)duration {
     relaxationDuration = duration;
     [storage saveRelaxationDuration:duration];
 }
-- (void)setRoundAmount:(int) amount
-{
+
+- (void)setRoundAmount:(int)amount {
     roundAmount = amount;
     [storage saveRoundAmount:amount];
 }
 
-- (void) setState:(TabataStates)state
-{
+- (void)setState:(TabataStates)state {
     tabataState = state;
     [[NSNotificationCenter defaultCenter] postNotificationName:StateChanged object:self];
 }

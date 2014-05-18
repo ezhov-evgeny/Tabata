@@ -1,5 +1,5 @@
 //
-//  ru_ezhoffViewController.h
+//  TabataViewController.h
 //  Tabata Timer
 //
 //  Created by Евгений Ежов on 29.12.13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ru_ezhoffViewController : UIViewController
+@interface TabataViewController : UIViewController
 
 @property(strong, nonatomic) IBOutlet UILabel *timerLabel;
 

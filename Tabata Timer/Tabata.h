@@ -36,10 +36,7 @@ typedef enum {
 
 - (void)update;
 
-// Getters
-- (float)getStartingDuration;
-
-- (float)getExersiceDuration;
+- (float)getExerciseDuration;
 
 - (float)getRelaxationDuration;
 
@@ -50,9 +47,6 @@ typedef enum {
 - (int)getCurrentRound;
 
 - (TabataStates)getState;
-
-// Setters
-- (void)setStartingDuration:(float)duration;
 
 - (void)setExerciseDuration:(float)duration;
 

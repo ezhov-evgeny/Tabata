@@ -1,31 +1,39 @@
 //
-//  ru_ezhoffViewController.m
+//  TabataViewController.m
 //  Tabata Timer
 //
 //  Created by Евгений Ежов on 29.12.13.
 //  Copyright (c) 2013 Евгений Ежов. All rights reserved.
 //
 
-#import "ru_ezhoffViewController.h"
+#import "TabataViewController.h"
 #import "Tabata.h"
 #import "Theme.h"
 #import "SoundEffects.h"
-#import "ThemeStub.h"
+#import "ThemeNative7.h"
 
-@interface ru_ezhoffViewController ()
+@interface TabataViewController ()
 
 @end
 
-@implementation ru_ezhoffViewController
+@implementation TabataViewController
 
 Tabata *tabata;
 NSObject <Theme> *theme;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.timerLabel.text = @"Loaded";
-    self.pauseButton.hidden = true;
-    self.stopButton.hidden = true;
+    theme = [ThemeNative7 new];
+    [self.timerLabel setText:@"0.00"];
+    [self.pauseButton setHidden:true];
+    [self.stopButton setHidden:true];
+    [self.navigationController.navigationBar setTintColor:[theme getColorFor:THEME_NAVIGATION_BUTTONS]];
+    [self.startButton setTintColor:[theme getColorFor:THEME_START]];
+    [self.stopButton setTintColor:[theme getColorFor:THEME_STOP]];
+    [self.pauseButton setTintColor:[theme getColorFor:THEME_PAUSE]];
+    [self.startButton.titleLabel setFont:[theme getFontFor:THEME_START]];
+    [self.roundLabel setFont:[theme getFontFor:THEME_ROUND]];
+    [self.roundLabel setTextColor:[theme getColorFor:THEME_ROUND]];
     tabata = [Tabata getTabata];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(tabataStateChanged:)
@@ -36,9 +44,8 @@ NSObject <Theme> *theme;
                                                  name:TimerUpdated
                                                object:tabata];
     [SoundEffects registerSoundEffects];
-
-    theme = [ThemeStub new];
-
+    [self showRound];
+    [self showTime];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,39 +54,39 @@ NSObject <Theme> *theme;
 }
 
 - (IBAction)onStartPressed:(id)sender {
-    self.startButton.hidden = true;
-    self.pauseButton.hidden = false;
-    self.stopButton.hidden = false;
+    [self.startButton setHidden:true];
+    [self.pauseButton setHidden:false];
+    [self.stopButton setHidden:false];
     [tabata start];
 }
 
 - (IBAction)onStopPressed:(id)sender {
-    self.startButton.hidden = false;
-    self.pauseButton.hidden = true;
-    self.stopButton.hidden = true;
+    [self.startButton setHidden:false];
+    [self.pauseButton setHidden:true];
+    [self.stopButton setHidden:true];
     [tabata stop];
 }
 
 - (IBAction)onPausePressed:(id)sender {
-    self.startButton.hidden = false;
-    self.pauseButton.hidden = true;
-    self.stopButton.hidden = false;
+    [self.startButton setHidden:false];
+    [self.pauseButton setHidden:true];
+    [self.stopButton setHidden:false];
     [tabata pause];
 }
 
 - (void)tabataStateChanged:(NSNotification *)notification {
     switch ([tabata getState]) {
         case STARTING:
-            self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
+            self.timerLabel.textColor = [theme getColorFor:THEME_TIMER_INACTIVE];
             break;
         case EXERCISE:
-            self.timerLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+            self.timerLabel.textColor = [theme getColorFor:THEME_TIMER_EXERCISE];
             break;
         case RELAXATION:
-            self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
+            self.timerLabel.textColor = [theme getColorFor:THEME_TIMER_RELAXATION];
             break;
         default:
-            self.timerLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+            self.timerLabel.textColor = [theme getColorFor:THEME_TIMER_INACTIVE];
             break;
     }
     [self showRound];
@@ -95,6 +102,6 @@ NSObject <Theme> *theme;
 }
 
 - (void)showRound {
-    self.roundLabel.text = [NSString stringWithFormat:@"Round %i/%i", [tabata getCurrentRound], [tabata getRoundAmount]];
+    self.roundLabel.text = [NSString stringWithFormat:@"Round %i / %i", [tabata getCurrentRound], [tabata getRoundAmount]];
 }
 @end
