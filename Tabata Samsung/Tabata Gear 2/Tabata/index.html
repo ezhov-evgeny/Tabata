@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta charset="utf-8"/>
+    <meta name="description" content="StopWatch"/>
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="lib/tau/themes/black/tau.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+</head>
+<body>
+    <script src="./js/timerPageControl.js"></script>
+    <div class="ui-page ui-page-active" id="stopwatch-page">
+        <header class="ui-header ui-has-more ui-grid-col-2">
+            <button type="button" class="ui-btn btn-active" id="stopwatch-navi-stopwatch">StopWatch</button>
+            <button type="button" class="ui-btn" id="stopwatch-navi-timer">Timer</button>
+        </header>
+        <section class="ui-content" id="stopwatch-content-timer">
+            <div>
+                <div id="stopwatch-wrapper">
+                    <div id="d0" class="digit d0"></div>
+                    <div id="d1" class="digit d0"></div>
+                    <div class="digit colon"></div>
+                    <div id="d2" class="digit d0"></div>
+                    <div id="d3" class="digit d0"></div>
+                    <div class="digit colon"></div>
+                    <div id="d4" class="digit d0"></div>
+                    <div id="d5" class="digit d0"></div>
+                    <div id="d6" class="small digit d0"></div>
+                    <div id="d7" class="small digit d0"></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-content scrollable" id="stopwatch-content-lap-list">
+            <table id="stopwatch-lap-list"></table>
+        </section>
+        <footer class="ui-footer ui-grid-col-1" id="stopwatch-footer">
+            <button type="button" class="ui-btn stopwatch-btn stopwatch-ready footer-button-last" id="stopwatch-start-btn">START</button>
+            <button type="button" class="ui-btn stopwatch-btn stopwatch-running hidden" id="stopwatch-stop-btn">STOP</button>
+            <button type="button" class="ui-btn stopwatch-btn stopwatch-running hidden footer-button-last" id="stopwatch-lap-btn">LAP</button>
+            <button type="button" class="ui-btn stopwatch-btn stopwatch-paused hidden" id="stopwatch-restart-btn">RESTART</button>
+            <button type="button" class="ui-btn stopwatch-btn stopwatch-paused hidden footer-button-last" id="stopwatch-reset-btn">RESET</button>
+        </footer>
+    </div>
+
+    <div class="ui-page" id="timer-page">
+        <header class="ui-header ui-has-more ui-grid-col-2">
+            <button type="button" class="ui-btn" id="timer-navi-stopwatch">StopWatch</button>
+            <button type="button" class="ui-btn btn-active" id="timer-navi-timer">Timer</button>
+        </header>
+        <section class="ui-content scrollable" id="timer-content">
+            <div id="timer-labels">
+                <div class="timer-label">hr</div><div>min</div><div>sec</div>
+            </div>
+            <div class="flip-container">
+                <div data-index="0" class="big flip active"><div class="label">00</div></div>
+                <div data-index="1" class="big flip"><div class="label">00</div></div>
+                <div data-index="2" class="big flip"><div class="label">00</div></div>
+            </div>
+            <table id="timer-keyboard">
+                <tr>
+                    <td class="key"><button type="button" data-value="1" class="ui-btn">1</button></td>
+                    <td class="key"><button type="button" data-value="2" class="ui-btn">2</button></td>
+                    <td class="key"><button type="button" data-value="3" class="ui-btn">3</button></td>
+                </tr>
+                <tr>
+                    <td class="key"><button type="button" data-value="4" class="ui-btn">4</button></td>
+                    <td class="key"><button type="button" data-value="5" class="ui-btn">5</button></td>
+                    <td class="key"><button type="button" data-value="6" class="ui-btn">6</button></td>
+                </tr>
+                <tr>
+                    <td class="key"><button type="button" data-value="7" class="ui-btn">7</button></td>
+                    <td class="key"><button type="button" data-value="8" class="ui-btn">8</button></td>
+                    <td class="key"><button type="button" data-value="9" class="ui-btn">9</button></td>
+                </tr>
+                <tr>
+                    <td class="key"></td>
+                    <td class="key"><button type="button" data-value="0" class="ui-btn">0</button></td>
+                    <td class="key"><button type="button" data-value="del" class="ui-btn del">&nbsp;</button></td>
+                </tr>
+            </table>
+        </section>
+        <footer class="ui-footer ui-grid-col-1" id="timer-footer">
+            <button type="button" class="ui-btn timer-btn timer-ready footer-button-last" id="timer-start-btn">START</button>
+            <button type="button" class="ui-btn timer-btn timer-running hidden" id="timer-stop-btn">STOP</button>
+            <button type="button" class="ui-btn timer-btn timer-running hidden footer-button-last" id="timer-reset1-btn">RESET</button>
+            <button type="button" class="ui-btn timer-btn timer-paused hidden" id="timer-restart-btn">RESTART</button>
+            <button type="button" class="ui-btn timer-btn timer-paused hidden footer-button-last" id="timer-reset2-btn">RESET</button>
+        </footer>
+    </div>
+
+    <div class="ui-page" id="timer-up-page">
+        <div id="timer-up-total-time">00:00:00</div>
+        <button type="button" data-value="9" class="ui-btn" id="timer-up-stop-btn">OK</button>
+    </div>
+
+    <script src="./lib/tau/js/tau.js"></script>
+    <script src="./js/core/core.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+</html>

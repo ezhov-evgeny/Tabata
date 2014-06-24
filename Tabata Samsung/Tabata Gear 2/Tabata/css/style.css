@@ -1,0 +1,440 @@
+/* ----------------------------
+
+    - Common
+        - General
+        - Flip
+        - Digits
+    - StopWatch page
+    - Timer page
+        - Timer-up page
+
+-----------------------------*/
+
+
+/* ----------------------------
+    Common
+-----------------------------*/
+
+/* General */
+
+.clear {
+    clear: both;
+}
+
+/* Flip */
+
+.flip-container div.label {
+    text-align: center;
+}
+
+.flip-container input {
+    position: absolute;
+    left: -9999px;
+}
+
+.flip {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 60px;
+    height: 51px;
+    float: left;
+    font-size: 40px;
+    color: #ddd;
+}
+
+.flip-container.night .flip {
+    color: #fff;
+}
+
+.flip.big {
+    width: 90px;
+    height: 73px;
+    background-image: url(../img/timer/flip_black_big_bg_scaled.png);
+    background-position: center top;
+    padding-top: 2px;
+    font-size: 59px;
+    margin-left: 3px;
+    margin-right: 3px;
+    color: #dddddd;
+}
+
+.flip.big.active {
+    background-position: center bottom;
+}
+/* Digits */
+
+.digit {
+    width: 34px;
+    height: 51px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.digit.small {
+    width: 10px;
+    height: 15px;
+    margin-top: 36px;
+}
+
+.colon {
+    background-image: url(../img/stopwatch/14x58/colon.png);
+    width: 14px;
+    height: 58px;
+}
+
+.d0 {
+    background-image: url(../img/stopwatch/34x51/0.png);
+}
+
+.d1 {
+    background-image: url(../img/stopwatch/34x51/1.png);
+}
+
+.d2 {
+    background-image: url(../img/stopwatch/34x51/2.png);
+}
+
+.d3 {
+    background-image: url(../img/stopwatch/34x51/3.png);
+}
+
+.d4 {
+    background-image: url(../img/stopwatch/34x51/4.png);
+}
+
+.d5 {
+    background-image: url(../img/stopwatch/34x51/5.png);
+}
+
+.d6 {
+    background-image: url(../img/stopwatch/34x51/6.png);
+}
+
+.d7 {
+    background-image: url(../img/stopwatch/34x51/7.png);
+}
+
+.d8 {
+    background-image: url(../img/stopwatch/34x51/8.png);
+}
+
+.d9 {
+    background-image: url(../img/stopwatch/34x51/9.png);
+}
+
+.small.d0 {
+    background-image: url(../img/stopwatch/10x15/0.png);
+}
+
+.small.d1 {
+    background-image: url(../img/stopwatch/10x15/1.png);
+}
+
+.small.d2 {
+    background-image: url(../img/stopwatch/10x15/2.png);
+}
+
+.small.d3 {
+    background-image: url(../img/stopwatch/10x15/3.png);
+}
+
+.small.d4 {
+    background-image: url(../img/stopwatch/10x15/4.png);
+}
+
+.small.d5 {
+    background-image: url(../img/stopwatch/10x15/5.png);
+}
+
+.small.d6 {
+    background-image: url(../img/stopwatch/10x15/6.png);
+}
+
+.small.d7 {
+    background-image: url(../img/stopwatch/10x15/7.png);
+}
+
+.small.d8 {
+    background-image: url(../img/stopwatch/10x15/8.png);
+}
+
+.small.d9 {
+    background-image: url(../img/stopwatch/10x15/9.png);
+}
+
+/* ----------------------------
+    StopWatch page
+-----------------------------*/
+
+#stopwatch-wrapper {
+    overflow: hidden;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
+#stopwatch-lap-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#stopwatch-lap-list .stopwatch-lap-row td:nth-child(1) {
+    width: 35px;
+}
+
+#stopwatch-lap-list .stopwatch-lap-row td:nth-child(2) {
+    font-size: 1.0em;
+    padding-left: 1em;
+    padding-right: 0.5em;
+}
+
+#stopwatch-lap-list .stopwatch-lap-row td:nth-child(3) {
+    font-size: 1.5em;
+}
+
+#stopwatch-lap-list .stopwatch-lap-row .mili {
+    font-size: 0.6em;
+}
+
+#stopwatch-lap-list .stopwatch-lap-row {
+    border-top: 1px solid #e9e8e5;
+}
+
+#stopwatch-lap-list .stopwatch-lap-row:last-of-type {
+    border-bottom: 1px solid #e9e8e5;
+}
+
+#stopwatch-navbar-running {
+    display: none;
+}
+
+#stopwatch-navbar-paused {
+    display: none;
+}
+
+/* ----------------------------
+    Timer page
+-----------------------------*/
+
+#timer-labels {
+    color: #6d5e52;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+#timer-labels div {
+    width: 33.33%;
+    float: left;
+}
+
+#timer-keyboard {
+    width: 100%;
+}
+
+#timer-keyboard .ui-btn.del {
+    background-image: url('../img/timer/icon_del.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#timer-keyboard .ui-btn.del:active {
+    background-image: url('../img/timer/icon_del_active.png');
+}
+
+#timer-keyboard .ui-btn {
+    color: #6d5e52;
+}
+
+#timer-keyboard .ui-btn:active {
+    color: #000;
+}
+
+#timer-keyboard .ui-btn-inner {
+    padding: 5px;
+}
+
+#timer-keyboard .ui-btn-text {
+    font-size: 1em;
+}
+
+#timer-keyboard .key {
+    width: 33.33%;
+}
+
+/* Timer-up page */
+
+#timer-up-page {
+    background-image: url(../img/timer/time_up_background.png);
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 320px !important;
+    background-size: 100%;
+    background-position: 0px -70px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#timer-up-stop-btn.ui-btn-up-s {
+    background: red;
+}
+
+#timer-up-stop-btn.ui-btn-down-s {
+    color: white;
+}
+
+#timer-up-stop-btn .ui-btn-text {
+    color: #282828;
+    text-shadow: none;
+    font-size: 0.75rem;
+}
+
+#timer-up-stop-btn .ui-btn-inner {
+    padding: 0;
+}
+
+#timer-navbar-running {
+    display: none;
+}
+
+#timer-navbar-paused {
+    display: none;
+}
+
+.ui-mobile, .ui-mobile body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    background: #f8f6ef;
+}
+
+.ui-header {
+    top: 0;
+    height: 46px;
+    padding: 0;
+    border: 0;
+}
+
+.ui-footer {
+    border: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.ui-header > button, .ui-footer > button {
+    height: 46px;
+    padding: 0;
+    line-height: 48px;
+}
+
+.hidden {
+    display: none;
+}
+
+.ui-content {
+    padding: 12px 16px;
+    margin: 0;
+}
+
+footer.ui-footer {
+    height: 46px;
+}
+
+.footer-button-last {
+    border-right: 0 !important;
+}
+
+#stopwatch-content-timer {
+    height: 80px !important;
+    overflow: hidden !important;
+}
+
+#stopwatch-content-lap-list {
+    height: 148px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#stopwatch-page, #timer-page {
+    min-height: 228px !important;
+}
+
+#stopwatch-lap-list {
+    color: #eeeeee;
+    font-size: 50%;
+}
+
+#timer-content {
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+
+.btn-active {
+    background-color: #645C56;
+}
+
+#timer-keyboard {
+    margin-top: 94px;
+}
+
+.key {
+    padding: 2px;
+}
+
+.key > button {
+    background: black;
+    color: #65564B;
+    box-shadow: inset 0px 0px 0px 1px #333333;
+    text-align: center;
+    padding: 0;
+    line-height: normal;
+    font-size: 22px;
+}
+.key > button:active {
+    background: #65564B;
+    color: black;
+}
+
+.key > div > img {
+    width: 27px;
+    height: 15px;
+}
+
+#timer-up-total-time {
+    position: relative;
+    top: 61.0%;
+    color: white;
+    font-size: 1.5em;
+}
+
+#timer-up-stop-btn {
+    width: 69%;
+    height: 1.45em;
+    padding: 0;
+    margin: auto;
+    position: relative;
+    top: 65%;
+    border: none;
+    box-shadow: 1px 1px 1px #111111;
+}
+
+/* Mask page */
+#mask-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+    z-index: 1;
+    background: #000;
+}

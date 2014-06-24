@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Tabata" version="1.0.0" viewmodes="maximized">
+    <tizen:app-control>
+        <tizen:src name="index.html"/>
+        <tizen:operation name="http://tizen.org/appcontrol/operation/alarm"/>
+    </tizen:app-control>
+    <tizen:application id="Me3u1Xnpde.Tabata" package="Me3u1Xnpde" required_version="2.2"/>
+    <content src="index.html"/>
+    <icon src="icon.png"/>
+    <name>Tabata</name>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:privilege name="http://tizen.org/privilege/alarm"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.info"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:setting background-support="enable"/>
+</widget>
