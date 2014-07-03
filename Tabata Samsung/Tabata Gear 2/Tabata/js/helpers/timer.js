@@ -14,25 +14,25 @@ define({
          * Divisor table used by the splitTime.
          *
          * The array describes the ratio between two consecutive digits
-         * on the stopwatch.
+         * on the tabata.
          * Eg. the 3rd digit (tens of minutes) described by divs[2]
          * is 6 times less worth than the 2nd digit (ones of hours)
-         * @type {array}
+         * @type {Array}
          */
-        var divs = [10, 10, 6, 10, 6, 10, 10, 10];
+        var divs = [6, 10, 6, 10, 10, 10];
 
 
         /**
          * Calculate digits for the timer
          *
          * @param {int} ms Milliseconds since the start.
-         * @return {array} Int-indexed array with data for the stopwatch.
+         * @return {Array} Int-indexed array with data for the tabata.
          */
         function Time(ms) {
             if (ms === undefined) {
-                return;
+                return [];
             }
-            var r = 0, i = divs.length;
+            var r, i = divs.length;
 
             if (ms < 0) {
                 throw new Error('Can\'t split time smaller than 0');
@@ -46,8 +46,8 @@ define({
                 // Calculates digits from right to the left, one at a time.
                 //
                 // 'r' is the remaining time in current units (eg. in seconds
-                // on the 3rd interation or in minutes on the 5th one)
-                // 'divs' describe the ratio between digits on the stopwatch.
+                // on the 3rd iteration or in minutes on the 5th one)
+                // 'divs' describe the ratio between digits on the tabata.
                 //
                 // In order to get the current digit, the remainder 'r' from
                 // the previous step is modulo-divided by the value (ratio)

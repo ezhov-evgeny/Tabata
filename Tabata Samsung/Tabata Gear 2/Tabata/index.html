@@ -3,21 +3,21 @@
 <head>
     <meta name="viewport" content="width=device-width,user-scalable=no">
     <meta charset="utf-8"/>
-    <meta name="description" content="StopWatch"/>
-    <title>StopWatch</title>
+    <meta name="description" content="SportTimer"/>
+    <title>SportTimer</title>
     <link rel="stylesheet" href="lib/tau/themes/black/tau.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
 </head>
 <body>
     <script src="./js/timerPageControl.js"></script>
-    <div class="ui-page ui-page-active" id="stopwatch-page">
+    <div class="ui-page ui-page-active" id="tabata-page">
         <header class="ui-header ui-has-more ui-grid-col-2">
-            <button type="button" class="ui-btn btn-active" id="stopwatch-navi-stopwatch">StopWatch</button>
-            <button type="button" class="ui-btn" id="stopwatch-navi-timer">Timer</button>
+            <button type="button" class="ui-btn btn-active" id="tabata-navi-tabata">Tabata</button>
+            <button type="button" class="ui-btn" id="tabata-navi-timer">Rounds</button>
         </header>
-        <section class="ui-content" id="stopwatch-content-timer">
+        <section class="ui-content" id="tabata-content-timer">
             <div>
-                <div id="stopwatch-wrapper">
+                <div id="tabata-wrapper">
                     <div id="d0" class="digit d0"></div>
                     <div id="d1" class="digit d0"></div>
                     <div class="digit colon"></div>
@@ -26,27 +26,25 @@
                     <div class="digit colon"></div>
                     <div id="d4" class="digit d0"></div>
                     <div id="d5" class="digit d0"></div>
-                    <div id="d6" class="small digit d0"></div>
-                    <div id="d7" class="small digit d0"></div>
                 </div>
             </div>
         </section>
-        <section class="ui-content scrollable" id="stopwatch-content-lap-list">
-            <table id="stopwatch-lap-list"></table>
+        <section class="ui-content scrollable" id="tabata-content-lap-list">
+            <table id="tabata-lap-list"></table>
         </section>
-        <footer class="ui-footer ui-grid-col-1" id="stopwatch-footer">
-            <button type="button" class="ui-btn stopwatch-btn stopwatch-ready footer-button-last" id="stopwatch-start-btn">START</button>
-            <button type="button" class="ui-btn stopwatch-btn stopwatch-running hidden" id="stopwatch-stop-btn">STOP</button>
-            <button type="button" class="ui-btn stopwatch-btn stopwatch-running hidden footer-button-last" id="stopwatch-lap-btn">LAP</button>
-            <button type="button" class="ui-btn stopwatch-btn stopwatch-paused hidden" id="stopwatch-restart-btn">RESTART</button>
-            <button type="button" class="ui-btn stopwatch-btn stopwatch-paused hidden footer-button-last" id="stopwatch-reset-btn">RESET</button>
+        <footer class="ui-footer ui-grid-col-1" id="tabata-footer">
+            <button type="button" class="ui-btn tabata-btn tabata-ready footer-button-last" id="tabata-start-btn">START</button>
+            <button type="button" class="ui-btn tabata-btn tabata-running hidden" id="tabata-stop-btn">STOP</button>
+            <button type="button" class="ui-btn tabata-btn tabata-running hidden footer-button-last" id="tabata-pause-btn">PAUSE</button>
+            <button type="button" class="ui-btn tabata-btn tabata-paused hidden" id="tabata-resume-btn">RESUME</button>
+            <button type="button" class="ui-btn tabata-btn tabata-paused hidden footer-button-last" id="tabata-reset-btn">RESET</button>
         </footer>
     </div>
 
     <div class="ui-page" id="timer-page">
         <header class="ui-header ui-has-more ui-grid-col-2">
-            <button type="button" class="ui-btn" id="timer-navi-stopwatch">StopWatch</button>
-            <button type="button" class="ui-btn btn-active" id="timer-navi-timer">Timer</button>
+            <button type="button" class="ui-btn" id="timer-navi-tabata">Tabata</button>
+            <button type="button" class="ui-btn btn-active" id="timer-navi-timer">Rounds</button>
         </header>
         <section class="ui-content scrollable" id="timer-content">
             <div id="timer-labels">

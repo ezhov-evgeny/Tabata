@@ -454,13 +454,13 @@ define({
         }
 
         /**
-         * Handles navigation stopwatch button tap
+         * Handles navigation tabata button tap
          * @param {event} ev
          */
         function onNaviStopWatchTap(ev) {
             ev.stopPropagation();
             ev.preventDefault();
-            pageId = '#stopwatch-page';
+            pageId = '#tabata-page';
             tau.changePage(pageId);
         }
 
@@ -483,7 +483,7 @@ define({
         function bindEvents() {
             var buttons, q;
 
-            document.getElementById('timer-navi-stopwatch').addEventListener(
+            document.getElementById('timer-navi-tabata').addEventListener(
                 'click',
                 onNaviStopWatchTap
             );

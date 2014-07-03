@@ -10,7 +10,7 @@ define({
         'core/event',
         'core/template',
         'core/application',
-        'views/stopWatchPage',
+        'views/tabataPage',
         'views/timerPage',
         'core/systeminfo'
     ],
@@ -33,7 +33,7 @@ define({
                     });
                     app.exit();
                 }
-                if (pageid === 'stopwatch-page' || pageid === 'timer-page') {
+                if (pageid === 'tabata-page' || pageid === 'timer-page') {
                     e.fire('visibility.change', {
                         hidden: true
                     });
