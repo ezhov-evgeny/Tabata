@@ -139,6 +139,24 @@ define({
         }
 
         /**
+         * Refresh UI layout for current mode
+         */
+        function changeMode() {
+            refreshTimer();
+            refreshRounds();
+            var wrapper = document.getElementById('tabata-page');
+            wrapper.classList.remove.apply(
+                wrapper.classList,
+                [
+                    'prepare',
+                    'work',
+                    'rest'
+                ]
+            );
+            wrapper.classList.add(timer.mode);
+        }
+
+        /**
          * Start the timer.
          *
          * @param {Event} event Event.
@@ -324,7 +342,7 @@ define({
         e.listeners({
             'views.stopWatchPage.show': show,
             'views.tabataPage.tick': refreshTimer,
-            'views.tabataPage.changeMode': refreshRounds
+            'views.tabataPage.changeMode': changeMode
         });
 
         return {

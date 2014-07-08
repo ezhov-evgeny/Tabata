@@ -23,3 +23,8 @@ Pods
 #Eclipse
 .metadata/
 .build/
+
+#Tizen
+.sdk_delta.info
+.rds_delta
+*.wgt
