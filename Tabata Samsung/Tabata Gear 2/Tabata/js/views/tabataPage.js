@@ -10,6 +10,7 @@ define({
     requires: [
         'core/event',
         'models/intervalTimer',
+        'core/audio',
         'core/template',
         'helpers/timer'
     ],
@@ -18,6 +19,7 @@ define({
 
         var e = req.core.event,
             tpl = req.core.template,
+            audio = req.core.audio,
             IntervalTimer = req.models.intervalTimer.IntervalTimer,
             Time = req.helpers.timer.Time,
             stopLapListEl = null,
@@ -27,7 +29,8 @@ define({
             page = null,
             pageId = 'tabata-page',
             timer = null,
-            initialised = false;
+            initialised = false,
+            ALARM_SOUND_PATH = 'sounds/sounds_alarm.mp3';
 
         /**
          * Show the tabata page.
@@ -154,6 +157,7 @@ define({
                 ]
             );
             wrapper.classList.add(timer.mode);
+            audio.play({loop: false});
         }
 
         /**
@@ -313,6 +317,8 @@ define({
 
             // init UI by binding events
             bindEvents();
+
+            audio.setFile(ALARM_SOUND_PATH);
 
             initialised = true;
             return true;
