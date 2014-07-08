@@ -43,7 +43,7 @@ define({
             this.work = work;
             this.prepare = prepare;
             this.delay = 10;
-            this.id = setInterval(this.tick.bind(this), this.delay);
+            this.id = null;
         }
 
         IntervalTimer.prototype = {
@@ -80,10 +80,13 @@ define({
              * @return {IntervalTimer} This object for chaining.
              */
             reset: function reset() {
+                clearInterval(this.id);
+                this.id = null;
+                this.timePaused = null;
                 this.status = 'ready';
                 this.mode = 'prepare';
                 this.startTime = null;
-                this.currentRound = 1;
+                this.currentRound = 0;
             },
 
             /**
@@ -93,6 +96,9 @@ define({
              * @return {IntervalTimer} This object for chaining.
              */
             run: function run() {
+                if (this.id === null) {
+                    this.id = setInterval(this.tick.bind(this), this.delay);
+                }
                 switch (this.status) {
                     case 'ready':
                         if (this.startTime === null) {
@@ -123,9 +129,7 @@ define({
              * @return {IntervalTimer} This object for chaining.
              */
             stop: function stop() {
-                clearInterval(this.id);
-                this.status = 'stopped';
-                this.timePaused = null;
+                this.reset();
                 return this;
             },
 

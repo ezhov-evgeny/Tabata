@@ -98,6 +98,47 @@ define({
         }
 
         /**
+         * Refresh rounds digits.
+         *
+         * @return {Array} Array of digits.
+         */
+        function refreshRounds() {
+            var round,
+                i,
+                element;
+
+            if (timer.currentRound <= 9) {
+                round = '0';
+            }
+            round += '' + timer.currentRound;
+            if (timer.rounds <= 9) {
+                round += '0';
+            }
+            round += '' + timer.rounds;
+
+            for (i = round.length - 1; i >= 0; i -= 1) {
+                element = document.getElementById('dr' + i);
+                element.classList.remove.apply(
+                    element.classList,
+                    [
+                        'd0',
+                        'd1',
+                        'd2',
+                        'd3',
+                        'd4',
+                        'd5',
+                        'd6',
+                        'd7',
+                        'd8',
+                        'd9'
+                    ]
+                );
+                element.classList.add('d' + round[i]);
+            }
+            return round;
+        }
+
+        /**
          * Start the timer.
          *
          * @param {Event} event Event.
@@ -161,6 +202,7 @@ define({
             e.preventDefault();
             timer.stop();
             refreshTimer();
+            refreshRounds();
             showButtons();
         }
 
@@ -171,6 +213,7 @@ define({
             e.preventDefault();
             timer.pause();
             refreshTimer();
+            refreshRounds();
             showButtons();
         }
 
@@ -250,7 +293,7 @@ define({
                 return false;
             }
             // init model
-            timer = new IntervalTimer(3000, 20000, 10000, 10, 'views.tabataPage.tick', 'views.tabataPage.changeMode');
+            timer = new IntervalTimer(3000, 20000, 10000, 8, 'views.tabataPage.tick', 'views.tabataPage.changeMode');
 
             // init UI by binding events
             bindEvents();
@@ -280,7 +323,8 @@ define({
 
         e.listeners({
             'views.stopWatchPage.show': show,
-            'views.tabataPage.tick': refreshTimer
+            'views.tabataPage.tick': refreshTimer,
+            'views.tabataPage.changeMode': refreshRounds
         });
 
         return {
