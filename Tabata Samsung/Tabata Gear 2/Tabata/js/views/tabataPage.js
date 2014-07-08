@@ -44,8 +44,8 @@ define({
          */
         function showButtons(status) {
             var btns = document.getElementsByClassName('tabata-btn'),
-                i = 0,
-                footer = null;
+                i,
+                footer;
             status = status || timer.status;
             for (i = btns.length - 1; i >= 0; i -= 1) {
                 btns[i].classList.add('hidden');
@@ -158,11 +158,9 @@ define({
 
         /**
          * Start the timer.
-         *
-         * @param {Event} event Event.
          */
-        function start(ev) {
-            ev.preventDefault();
+        function start(e) {
+            e.preventDefault();
             timer.run();
             showButtons();
         }
@@ -188,8 +186,8 @@ define({
             /*jshint validthis: true*/
             var currentLap = timer.lap(),
                 html,
-                tmptable = null,
-                newitem = null;
+                tmpTable,
+                newItem;
 
             stopLapListEl =
                 stopLapListEl || document.getElementById('tabata-lap-list');
@@ -199,14 +197,14 @@ define({
                 totalTime: new Time(timer.getTimeElapsed()),
                 lapTime: new Time(currentLap.time)
             });
-            tmptable = document.createElement('table');
-            tmptable.innerHTML = html;
-            newitem = tmptable.firstChild;
+            tmpTable = document.createElement('table');
+            tmpTable.innerHTML = html;
+            newItem = tmpTable.firstChild;
 
             if (stopLapListEl.firstChild) {
-                stopLapListEl.insertBefore(newitem, stopLapListEl.firstChild);
+                stopLapListEl.insertBefore(newItem, stopLapListEl.firstChild);
             } else {
-                stopLapListEl.appendChild(newitem);
+                stopLapListEl.appendChild(newItem);
             }
 
             stopContentListLapEl.scrollTop = 0;

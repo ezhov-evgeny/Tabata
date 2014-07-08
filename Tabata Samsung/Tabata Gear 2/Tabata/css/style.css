@@ -4,7 +4,7 @@
         - General
         - Flip
         - Digits
-    - tabata page
+    - Tabata page
     - Timer page
         - Timer-up page
 
@@ -50,8 +50,7 @@
 .flip.big {
     width: 90px;
     height: 73px;
-    background-image: url(../img/timer/flip_black_big_bg_scaled.png);
-    background-position: center top;
+    background: url(../img/timer/flip_black_big_bg_scaled.png) center top;
     padding-top: 2px;
     font-size: 59px;
     margin-left: 3px;
@@ -336,9 +335,7 @@
 }
 
 #timer-keyboard .ui-btn.del {
-    background-image: url('../img/timer/icon_del.png');
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('../img/timer/icon_del.png') no-repeat center;
 }
 
 #timer-keyboard .ui-btn.del:active {
@@ -368,12 +365,11 @@
 /* Timer-up page */
 
 #timer-up-page {
-    background-image: url(../img/timer/time_up_background.png);
     height: 320px !important;
     min-height: 320px !important;
     max-height: 320px !important;
     background-size: 100%;
-    background-position: 0px -70px;
+    background: url(../img/timer/time_up_background.png) 0 -70px;
     text-align: center;
     overflow: hidden;
 }
@@ -461,8 +457,8 @@ footer.ui-footer {
 
 #tabata-content-lap-list {
     height: 148px !important;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #tabata-page, #timer-page {
@@ -494,7 +490,7 @@ footer.ui-footer {
 .key > button {
     background: black;
     color: #65564B;
-    box-shadow: inset 0px 0px 0px 1px #333333;
+    box-shadow: inset 0 0 0 1px #333333;
     text-align: center;
     padding: 0;
     line-height: normal;
