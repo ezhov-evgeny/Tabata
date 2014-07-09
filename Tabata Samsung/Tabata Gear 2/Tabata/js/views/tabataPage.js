@@ -30,7 +30,7 @@ define({
             pageId = 'tabata-page',
             timer = null,
             initialised = false,
-            ALARM_SOUND_PATH = 'sounds/sounds_alarm.mp3';
+            ALARM_SOUND_PATH = 'sounds/beep_01.mp3';
 
         /**
          * Show the tabata page.
