@@ -85,6 +85,18 @@
     height: 58px;
 }
 
+.dot {
+    background-image: url(../img/tabata/14x58/dot.png);
+    width: 14px;
+    height: 58px;
+}
+
+.slash {
+    background-image: url(../img/tabata/14x58/slash.png);
+    width: 14px;
+    height: 58px;
+}
+
 .d0 {
     background-image: url(../img/tabata/34x51/0.png);
 }
@@ -131,6 +143,18 @@
     height: 58px;
 }
 
+.work .dot {
+    background-image: url(../img/tabata/work/14x58/dot.png);
+    width: 14px;
+    height: 58px;
+}
+
+.work .slash {
+    background-image: url(../img/tabata/work/14x58/slash.png);
+    width: 14px;
+    height: 58px;
+}
+
 .work .d0 {
     background-image: url(../img/tabata/work/34x51/0.png);
 }
@@ -173,6 +197,18 @@
 
 .rest .colon {
     background-image: url(../img/tabata/rest/14x58/colon.png);
+    width: 14px;
+    height: 58px;
+}
+
+.rest .dot {
+    background-image: url(../img/tabata/rest/14x58/dot.png);
+    width: 14px;
+    height: 58px;
+}
+
+.rest .slash {
+    background-image: url(../img/tabata/rest/14x58/slash.png);
     width: 14px;
     height: 58px;
 }
