@@ -221,8 +221,7 @@ define({
         function stop(e) {
             e.preventDefault();
             timer.stop();
-            refreshTimer();
-            refreshRounds();
+            changeMode();
             showButtons();
         }
 
