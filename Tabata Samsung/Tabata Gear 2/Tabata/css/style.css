@@ -254,7 +254,7 @@
 }
 
 .small.d0 {
-    background-image: url(../img/tabata/rest/10x15/0.png);
+    background-image: url(../img/tabata/10x15/0.png);
 }
 
 .small.d1 {
@@ -304,11 +304,47 @@
     width: 248px;
 }
 
+#tabata-mode {
+    color: #D6D6D6;
+    font-size: 27px;
+    overflow: hidden;
+    margin: auto;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+    width: 248px;
+}
+
+.work #tabata-mode {
+    color: #ee0000;
+}
+
+.rest #tabata-mode {
+    color: #00ee00;
+}
+
 #tabata-round-wrapper {
     overflow: hidden;
     margin: auto;
     padding-bottom: 15px;
     width: 248px;
+}
+
+#tabata-round-wrapper label {
+    color: #D6D6D6;
+    display: block;
+    float: left;
+    font-size: 27px;
+    margin-left: 77px;
+    margin-right: 19px;
+    margin-top: 25px;
+}
+
+.work #tabata-round-wrapper label {
+    color: #ee0000;
+}
+
+.rest #tabata-round-wrapper label {
+    color: #00ee00;
 }
 
 #tabata-lap-list {

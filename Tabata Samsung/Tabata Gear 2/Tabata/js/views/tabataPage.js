@@ -114,10 +114,6 @@ define({
                 round = '0';
             }
             round += '' + timer.currentRound;
-            if (timer.rounds <= 9) {
-                round += '0';
-            }
-            round += '' + timer.rounds;
 
             for (i = round.length - 1; i >= 0; i -= 1) {
                 element = document.getElementById('dr' + i);
@@ -138,6 +134,9 @@ define({
                 );
                 element.classList.add('d' + round[i]);
             }
+
+            element = document.getElementById('tabata-mode');
+            element.innerText = timer.mode;
             return round;
         }
 
