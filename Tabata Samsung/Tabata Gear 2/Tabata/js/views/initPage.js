@@ -33,7 +33,7 @@ define({
                     });
                     app.exit();
                 }
-                if (pageid === 'tabata-page' || pageid === 'timer-page') {
+                if (pageid === 'tabata-page' || pageid === 'settings-page') {
                     e.fire('visibility.change', {
                         hidden: true
                     });
