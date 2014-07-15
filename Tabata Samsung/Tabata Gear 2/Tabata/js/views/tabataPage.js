@@ -244,26 +244,7 @@ define({
             ev.preventDefault();
         }
 
-        /**
-         * Handles navigation timer button tap
-         * @param {event} ev
-         */
-        function onNaviTimerTap(ev) {
-            ev.stopPropagation();
-            ev.preventDefault();
-            // save laps list's position
-            stopContentListLapElScrollTop = stopContentListLapEl.scrollTop;
-            // change page to Timer
-            e.fire('views.timerPage.changeActivePage');
-            tau.changePage('#timer-page');
-        }
-
         function bindEvents() {
-            document.getElementById('tabata-navi-timer').addEventListener(
-                'click',
-                onNaviTimerTap
-            );
-
             document.getElementById('tabata-navi-tabata')
                 .addEventListener(
                 'click',

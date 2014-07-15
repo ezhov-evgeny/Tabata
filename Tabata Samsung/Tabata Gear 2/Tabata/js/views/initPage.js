@@ -11,7 +11,6 @@ define({
         'core/template',
         'core/application',
         'views/tabataPage',
-        'views/timerPage',
         'core/systeminfo'
     ],
     def: function viewsInitPage(req) {

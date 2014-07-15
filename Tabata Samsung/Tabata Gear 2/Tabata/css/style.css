@@ -47,17 +47,6 @@
     color: #fff;
 }
 
-.flip.big {
-    width: 90px;
-    height: 73px;
-    background: url(../img/timer/flip_black_big_bg_scaled.png) center top;
-    padding-top: 2px;
-    font-size: 59px;
-    margin-left: 3px;
-    margin-right: 3px;
-    color: #dddddd;
-}
-
 .flip.big.active {
     background-position: center bottom;
 }
@@ -71,6 +60,7 @@
     margin-left: 1px;
     background-size: 100%;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .digit.small {
@@ -80,177 +70,164 @@
 }
 
 .colon {
-    background-image: url(../img/tabata/14x58/colon.png);
     width: 14px;
     height: 58px;
+    overflow: hidden;
+    background: url(../img/tabata/colon.png) 0 0;
 }
 
 .dot {
-    background-image: url(../img/tabata/14x58/dot.png);
-    width: 14px;
-    height: 58px;
-}
-
-.slash {
-    background-image: url(../img/tabata/14x58/slash.png);
+    background: url(../img/tabata/dot.png) 0 0;
     width: 14px;
     height: 58px;
 }
 
 .d0 {
-    background-image: url(../img/tabata/34x51/0.png);
+    background: url(../img/tabata/0.png) 0 0;
 }
 
 .d1 {
-    background-image: url(../img/tabata/34x51/1.png);
+    background: url(../img/tabata/1.png) 0 0;
 }
 
 .d2 {
-    background-image: url(../img/tabata/34x51/2.png);
+    background: url(../img/tabata/2.png) 0 0;
 }
 
 .d3 {
-    background-image: url(../img/tabata/34x51/3.png);
+    background: url(../img/tabata/3.png) 0 0;
 }
 
 .d4 {
-    background-image: url(../img/tabata/34x51/4.png);
+    background: url(../img/tabata/4.png) 0 0;
 }
 
 .d5 {
-    background-image: url(../img/tabata/34x51/5.png);
+    background: url(../img/tabata/5.png) 0 0;
 }
 
 .d6 {
-    background-image: url(../img/tabata/34x51/6.png);
+    background: url(../img/tabata/6.png) 0 0;
 }
 
 .d7 {
-    background-image: url(../img/tabata/34x51/7.png);
+    background: url(../img/tabata/7.png) 0 0;
 }
 
 .d8 {
-    background-image: url(../img/tabata/34x51/8.png);
+    background: url(../img/tabata/8.png) 0 0;
 }
 
 .d9 {
-    background-image: url(../img/tabata/34x51/9.png);
-}
-
-.work .colon {
-    background-image: url(../img/tabata/work/14x58/colon.png);
-    width: 14px;
-    height: 58px;
-}
-
-.work .dot {
-    background-image: url(../img/tabata/work/14x58/dot.png);
-    width: 14px;
-    height: 58px;
-}
-
-.work .slash {
-    background-image: url(../img/tabata/work/14x58/slash.png);
-    width: 14px;
-    height: 58px;
-}
-
-.work .d0 {
-    background-image: url(../img/tabata/work/34x51/0.png);
-}
-
-.work .d1 {
-    background-image: url(../img/tabata/work/34x51/1.png);
-}
-
-.work .d2 {
-    background-image: url(../img/tabata/work/34x51/2.png);
-}
-
-.work .d3 {
-    background-image: url(../img/tabata/work/34x51/3.png);
-}
-
-.work .d4 {
-    background-image: url(../img/tabata/work/34x51/4.png);
-}
-
-.work .d5 {
-    background-image: url(../img/tabata/work/34x51/5.png);
-}
-
-.work .d6 {
-    background-image: url(../img/tabata/work/34x51/6.png);
-}
-
-.work .d7 {
-    background-image: url(../img/tabata/work/34x51/7.png);
-}
-
-.work .d8 {
-    background-image: url(../img/tabata/work/34x51/8.png);
-}
-
-.work .d9 {
-    background-image: url(../img/tabata/work/34x51/9.png);
+    background: url(../img/tabata/9.png) 0 0;
 }
 
 .rest .colon {
-    background-image: url(../img/tabata/rest/14x58/colon.png);
+    background: url(../img/tabata/colon.png) 0 58px;
     width: 14px;
     height: 58px;
+    overflow: hidden;
 }
 
 .rest .dot {
-    background-image: url(../img/tabata/rest/14x58/dot.png);
+    background: url(../img/tabata/dot.png) 0 58px;
     width: 14px;
     height: 58px;
-}
-
-.rest .slash {
-    background-image: url(../img/tabata/rest/14x58/slash.png);
-    width: 14px;
-    height: 58px;
+    overflow: hidden;
 }
 
 .rest .d0 {
-    background-image: url(../img/tabata/rest/34x51/0.png);
+    background: url(../img/tabata/0.png) 0 51px;
 }
 
 .rest .d1 {
-    background-image: url(../img/tabata/rest/34x51/1.png);
+    background: url(../img/tabata/1.png) 0 51px;
 }
 
 .rest .d2 {
-    background-image: url(../img/tabata/rest/34x51/2.png);
+    background: url(../img/tabata/2.png) 0 51px;
 }
 
 .rest .d3 {
-    background-image: url(../img/tabata/rest/34x51/3.png);
+    background: url(../img/tabata/3.png) 0 51px;
 }
 
 .rest .d4 {
-    background-image: url(../img/tabata/rest/34x51/4.png);
+    background: url(../img/tabata/4.png) 0 51px;
 }
 
 .rest .d5 {
-    background-image: url(../img/tabata/rest/34x51/5.png);
+    background: url(../img/tabata/5.png) 0 51px;
 }
 
 .rest .d6 {
-    background-image: url(../img/tabata/rest/34x51/6.png);
+    background: url(../img/tabata/6.png) 0 51px;
 }
 
 .rest .d7 {
-    background-image: url(../img/tabata/rest/34x51/7.png);
+    background: url(../img/tabata/7.png) 0 51px;
 }
 
 .rest .d8 {
-    background-image: url(../img/tabata/rest/34x51/8.png);
+    background: url(../img/tabata/8.png) 0 51px;
 }
 
 .rest .d9 {
-    background-image: url(../img/tabata/rest/34x51/9.png);
+    background: url(../img/tabata/9.png) 0 51px;
+}
+
+.work .colon {
+    background: url(../img/tabata/colon.png) 0 116px;
+    width: 14px;
+    height: 58px;
+    overflow: hidden;
+}
+
+.work .dot {
+    background: url(../img/tabata/dot.png) 0 116px;
+    width: 14px;
+    height: 58px;
+    overflow: hidden;
+}
+
+.work .d0 {
+    background: url(../img/tabata/0.png) 0 102px;
+}
+
+.work .d1 {
+    background: url(../img/tabata/1.png) 0 102px;
+}
+
+.work .d2 {
+    background: url(../img/tabata/2.png) 0 102px;
+}
+
+.work .d3 {
+    background: url(../img/tabata/3.png) 0 102px;
+}
+
+.work .d4 {
+    background: url(../img/tabata/4.png) 0 102px;
+}
+
+.work .d5 {
+    background: url(../img/tabata/5.png) 0 102px;
+}
+
+.work .d6 {
+    background: url(../img/tabata/6.png) 0 102px;
+}
+
+.work .d7 {
+    background: url(../img/tabata/7.png) 0 102px;
+}
+
+.work .d8 {
+    background: url(../img/tabata/8.png) 0 102px;
+}
+
+.work .d9 {
+    background: url(../img/tabata/9.png) 0 102px;
 }
 
 .small.d0 {
@@ -406,14 +383,6 @@
     width: 100%;
 }
 
-#timer-keyboard .ui-btn.del {
-    background: url('../img/timer/icon_del.png') no-repeat center;
-}
-
-#timer-keyboard .ui-btn.del:active {
-    background-image: url('../img/timer/icon_del_active.png');
-}
-
 #timer-keyboard .ui-btn {
     color: #6d5e52;
 }
@@ -435,16 +404,6 @@
 }
 
 /* Timer-up page */
-
-#timer-up-page {
-    height: 320px !important;
-    min-height: 320px !important;
-    max-height: 320px !important;
-    background-size: 100%;
-    background: url(../img/timer/time_up_background.png) 0 -70px;
-    text-align: center;
-    overflow: hidden;
-}
 
 #timer-up-stop-btn.ui-btn-up-s {
     background: red;
