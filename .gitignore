@@ -28,3 +28,4 @@ Pods
 .sdk_delta.info
 .rds_delta
 *.wgt
+.CustomProfile/
